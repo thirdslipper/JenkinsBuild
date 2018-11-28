@@ -9,7 +9,26 @@ public class Control {
 		//enhance();
 		//ternary();
 		//shortCircuit();
-		breakControl();
+		//breakControl();
+		switchStatements();
+	}
+
+	private static void switchStatements() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Input a value: ");
+		int x = scan.nextInt();
+		// As of Java 7, switch statements can take in
+		// Integers, Shorts, Characters, Strings, and Enums
+		// Longs are not allowed.
+		switch(x) {
+		case 0: System.out.println("x was 0"); break;
+		case 1: 
+			System.out.println("1");
+			break;
+		case 5: System.out.println("5"); break;
+		case 2: System.out.println("2"); break;
+		default: System.out.println("X was unrecognized.");
+		}
 	}
 
 	private static void breakControl() {
