@@ -55,8 +55,6 @@ public class ReflectionExample {
 		String s9 = new String("lo");
 		String s10= s8+s9;
 		System.out.println(s10);
-		s10= s10.intern();
-		System.out.println("Hello");
 	}
 
 	private static void beans() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
