@@ -22,6 +22,59 @@ public class Calculator<T extends Number> {
 		return (T) ret;
 	}
 	
-	//write a method which takes in any number of variables and sums them all.
-
+	public T add(T a, T... b) {
+		T ret = a;
+		for(T t : b) {
+			ret = add(ret, t);
+		}
+		return ret;
+	}
+	
+	public T sub(T a, T b) {
+		Number ret = a.doubleValue()-b.doubleValue();
+		if(a instanceof Float || a instanceof Double) {
+			return (T) ret;
+		}
+		ret = Math.round(ret.doubleValue());
+		return (T) ret;
+	}
+	public T mult(T a, T b) {
+		Number ret = a.doubleValue()*b.doubleValue();
+		if(a instanceof Float || a instanceof Double) {
+			return (T) ret;
+		}
+		ret = Math.round(ret.doubleValue());
+		return (T) ret;
+	}
+	public T div(T a, T b) {
+		Number ret = a.doubleValue()/b.doubleValue();
+		if(a instanceof Float || a instanceof Double) {
+			return (T) ret;
+		}
+		ret = Math.round(ret.doubleValue());
+		return (T) ret;
+	}
+	
+	
+	public T sub(T a, T...b) {
+		T ret = a;
+		for (T n : b) {
+			ret = sub(ret, n);
+		}
+		return ret;
+	}
+	public T mult(T a, T...b) {
+		T ret = a;
+		for (T n : b) {
+			ret = mult(ret, n);
+		}
+		return ret;
+	}
+	public T div(T a, T...b) {
+		T ret = a;
+		for (T n : b) {
+			ret = div(ret, n);
+		}
+		return ret;
+	}
 }
