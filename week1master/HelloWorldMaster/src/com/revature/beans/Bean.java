@@ -2,7 +2,7 @@ package com.revature.beans;
 
 import java.io.Serializable;
 
-public class Bean implements Serializable, Flammable {
+public class Bean implements Serializable, Flammable, Comparable<Bean> {
 	private static final long serialVersionUID = -1L;
 	
 	private String strain;
@@ -12,6 +12,14 @@ public class Bean implements Serializable, Flammable {
 	private boolean tasty;
 	public Bean() {
 		super();
+	}
+	public Bean(String strain, String color, int yield, float mass, boolean tasty) {
+		super();
+		this.strain = strain;
+		this.color = color;
+		this.yield = yield;
+		this.mass = mass;
+		this.tasty = tasty;
 	}
 	public String getStrain() {
 		return strain;
@@ -88,5 +96,17 @@ public class Bean implements Serializable, Flammable {
 	}
 	private void secret() {
 		System.out.println("shh");
+	}
+	@Override
+	public int compareTo(Bean b) {
+		if(!(this.strain==null)&&!this.strain.equals(b.strain))
+			return this.strain.compareTo(b.strain);
+		if(!(this.color==null)&&!this.color.equals(b.color))
+			return this.color.compareTo(b.color);
+		if(!(this.yield == b.yield))
+			return this.yield - b.yield;
+		if(!(this.mass==b.mass))
+			return (this.mass>  b.mass) ? 1: -1;
+		return new Boolean(this.tasty).compareTo(new Boolean(b.tasty));
 	}
 }

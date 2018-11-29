@@ -12,7 +12,6 @@ public class Calculator<T extends Number> {
 		Calculator<Integer> calc = new Calculator<Integer>();
 		System.out.println(calc.add(5, 6));
 	}
-	
 	public T add(T a, T b) {
 		Number ret = a.doubleValue()+b.doubleValue();
 		if(a instanceof Float || a instanceof Double) {
