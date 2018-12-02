@@ -251,11 +251,11 @@ public class EvaluationService {
 	 * @return
 	 */
 	public Map<String, Integer> wordCount (String string) {
-		// TODO Write an implementation for this method declaration
-
+//		System.out.println("word counter : " + string);
 		// split the phrase up, put it into an array, and count each of them
-		String[] arr = string.split("\\s+|\n|,\n");
-
+		String[] arr = string.split("\\s+|\n|,\n|,");
+		for (String s : arr)
+			System.out.println(s);
 		Map<String, Integer> expectedWordCount = new HashMap<String, Integer>();
 		for (String s : arr) {
 
@@ -267,6 +267,7 @@ public class EvaluationService {
 				expectedWordCount.put(s, count + 1);
 			}
 		}
+//		System.out.println("Expected Word Count : " + expectedWordCount);
 		return expectedWordCount;
 	}
 
@@ -351,33 +352,48 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String toPigLatin(String string) {
-		// TODO Write an implementation for this method declaration
+		//		System.out.println("Pig Latin : " + string);
+		StringBuilder sb = new StringBuilder();
+		String[] sentence = string.split("\\s+");
+		StringBuilder firstSound = new StringBuilder();
 
-		char firstLetter;
-		String consonant = ""; 
-		int counter = 0;
-		String piglat = "";
+		boolean vowelFlag;
+		int count;
 
-		for (int i = 0; i < string.length(); i++ )  {
-			firstLetter = string.charAt(i);
-			System.out.println(firstLetter);
-			if (firstLetter != 'a' && firstLetter != 'e' && firstLetter != 'i' && firstLetter != 'o' && firstLetter != 'u') {
-				consonant += firstLetter; // store consonants
-				counter += 1; 
-				System.out.println(consonant);
-			} else {
-				break;}
+		for (int i = 0; i < sentence.length; ++i) {
+			vowelFlag = false;
+			count = 0;
+			firstSound.delete(0,  firstSound.length());
+
+			//adds all the consonants leading a word, except for "qu"
+			//Results in storing the consonants leading a word + qu into sb firstSound
+
+			while (!vowelFlag) {
+				if (sentence[i].charAt(count) != 'a' && sentence[i].charAt(count) != 'e' 
+						&& sentence[i].charAt(count) != 'i' && sentence[i].charAt(count) != 'o' 
+						&& sentence[i].charAt(count) != 'u') {
+					firstSound.append(sentence[i].charAt(count++));
+				} else { //else just qu
+					if (firstSound.length() == 1 && sentence[i].length() > 1 && 
+							firstSound.charAt(0) == 'q' && sentence[i].charAt(1) == 'u') {
+						firstSound.append(sentence[i].charAt(count));
+					}
+					vowelFlag = !vowelFlag;
+				}
+			}
+			//vowel case
+			if (firstSound.equals("a") || firstSound.equals("e") || firstSound.equals("i") || firstSound.equals("o") 
+					|| firstSound.equals("u") || sentence[i].length() == 1) {
+				sb.append(sentence[i] + "ay ");
+			}
+			//single/multicluster consonants case
+			else { 
+				sb.append(sentence[i].substring(firstSound.length()) + firstSound.toString() + "ay ");
+			} 
 		}
-		for (int i = counter; i < string.length(); i++) {
-			firstLetter = string.charAt(i);
-			piglat += firstLetter;
-		}
-
-		piglat += consonant.concat("ay "); 
-
-		System.out.println(piglat);
-		return piglat.trim();
-	}	
+		//		System.out.println("result : " + sb.toString().trim());
+		return sb.toString().trim();
+	}
 
 
 	/**
@@ -601,9 +617,9 @@ public class EvaluationService {
 			string = string.replaceAll("\\s+|\\.|\\,","");
 			StringBuilder sb = new StringBuilder(string.toLowerCase());
 			int numSpaces = string.length()/5;
-				//if 5 words, /5 =1, space, unless total if 5 letters. 
-				//if anything else, ie, 7/5 = 1.4, rounds to 1, 
-				//11/5 = 2.2, rounds to 2. 
+			//if 5 words, /5 =1, space, unless total if 5 letters. 
+			//if anything else, ie, 7/5 = 1.4, rounds to 1, 
+			//11/5 = 2.2, rounds to 2. 
 			for (int i = 0; i <= numSpaces; ++i) {
 				sb.insert(i*6, ' ');
 			}
@@ -622,14 +638,14 @@ public class EvaluationService {
 			StringBuilder sb = new StringBuilder(string.replaceAll("\\s+", ""));
 			return cipherLetterSwap(false, sb);
 		}
-		
+
 		//Swaps all characters in the input to their reverse-alphabet equivalent, barring space.
 		public static String cipherLetterSwap(boolean forward, StringBuilder sb) {
 			System.out.println("Passed string : " + sb.toString());
-			
+
 			String alphabet = forward? encoded : decoded;
 			String reverseAlphabet = forward? decoded : encoded;
-			
+
 			for (int i = 0; i < sb.length(); ++i) {
 				if (sb.charAt(i) != ' ' && !Character.isDigit(sb.charAt(i))) {
 					System.out.print(sb.charAt(i));
@@ -819,10 +835,10 @@ public class EvaluationService {
 		}
 		System.out.println("next");
 		switch (operation) {
-			case "plus" : return (contextVariables[0] + contextVariables[1]);
-			case "minus" : return (contextVariables[0] - contextVariables[1]);
-			case "multiplied" : return (contextVariables[0] * contextVariables[1]);
-			case "divided" : return (contextVariables[0] / contextVariables[1]);
+		case "plus" : return (contextVariables[0] + contextVariables[1]);
+		case "minus" : return (contextVariables[0] - contextVariables[1]);
+		case "multiplied" : return (contextVariables[0] * contextVariables[1]);
+		case "divided" : return (contextVariables[0] / contextVariables[1]);
 		}
 		return 0;
 	}
