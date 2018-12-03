@@ -1,11 +1,20 @@
 package com.revature.eval.java.core;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
+import java.time.temporal.TemporalAmount;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Map;
 
 public class EvaluationService {
@@ -548,18 +557,18 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int calculateNthPrime(int i) {
-//		System.out.println("Find the " + i + "th prime.");
+		//		System.out.println("Find the " + i + "th prime.");
 		if (i == 0)
 			throw new IllegalArgumentException("There is no 0th prime.");
-		
+
 		int nth, count = 0;
-		
+
 		for (nth = 2, count = 0; count < i; ++nth) {
 			if (checkPrime(nth)) {
 				count++;
 			}
 		}
-//		System.out.println(nth-1);
+		//		System.out.println(nth-1);
 		return nth-1;
 	}
 	// Brute force checking of all possible divisions for prime
@@ -569,24 +578,24 @@ public class EvaluationService {
 				return false;
 		return true;
 	}
-/*	public int calculateNthPrime(int i) {
+	/*	public int calculateNthPrime(int i) {
 		System.out.println("Find the " + i + "th prime.");
 		if (i == 0)
 			throw new IllegalArgumentException("There is no 0th prime.");
 		int count = 0, n = 1, nth = i, j; 
-		
-		 * count for 
-		 * n for starting
-		 * nth for nth number, have it assign to i
-		 * j for 
-		 * 
+
+	 * count for 
+	 * n for starting
+	 * nth for nth number, have it assign to i
+	 * j for 
+	 * 
 		while (count < nth){
 			n += 1;
-			
-			 * i = 1, count = 0, n = 2, nth = 1, j = 2, returns i
-			 * 
-			 * 
-			 
+
+	 * i = 1, count = 0, n = 2, nth = 1, j = 2, returns i
+	 * 
+	 * 
+
 			for (j = 2; j <= n; j++){
 				if (n % j == 0) {
 					count++;
@@ -639,7 +648,7 @@ public class EvaluationService {
 		static final String decoded = "zyxwvutsrqponmlkjihgfedcba"; 
 
 		public static String encode(String string) {
-//			System.out.println("Base string : " + string);
+			//			System.out.println("Base string : " + string);
 			string = string.replaceAll("\\s+|\\.|\\,","");
 			StringBuilder sb = new StringBuilder(string.toLowerCase());
 			int numSpaces = string.length()/5;
@@ -660,14 +669,14 @@ public class EvaluationService {
 		 * @return
 		 */
 		public static String decode(String string) {
-//			System.out.println("Base String : " + string);
+			//			System.out.println("Base String : " + string);
 			StringBuilder sb = new StringBuilder(string.replaceAll("\\s+", ""));
 			return cipherLetterSwap(false, sb);
 		}
 
 		//Swaps all characters in the input to their reverse-alphabet equivalent, barring space.
 		public static String cipherLetterSwap(boolean forward, StringBuilder sb) {
-//			System.out.println("Passed string : " + sb.toString());
+			//			System.out.println("Passed string : " + sb.toString());
 
 			String alphabet = forward? encoded : decoded;
 			String reverseAlphabet = forward? decoded : encoded;
@@ -678,7 +687,7 @@ public class EvaluationService {
 					sb.replace(i, i+1, String.valueOf(reverseAlphabet.charAt(alphabet.indexOf(sb.charAt(i)))));
 				}
 			}
-//			System.out.println("\nResult : " + sb.toString() +"\n");
+			//			System.out.println("\nResult : " + sb.toString() +"\n");
 			return sb.toString().trim();
 		}
 	}
@@ -706,30 +715,30 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isValidIsbn(String string) {
-//		System.out.println("ISBN");
+		//		System.out.println("ISBN");
 		string = string.replaceAll("\\-", "");
 		boolean hasX = false;
-//		System.out.println("last char : " + string.charAt(string.length()-1));
+		//		System.out.println("last char : " + string.charAt(string.length()-1));
 		if (string.charAt(string.length()-1) == 'X'){
 			hasX = true;
 			string = string.replaceAll("X", "");
 		}
-//		System.out.println(string);
+		//		System.out.println(string);
 		try {
 			Long.valueOf(string);
-//			System.out.println(Long.valueOf(string));
+			//			System.out.println(Long.valueOf(string));
 			int sum = 0;
 			for (int i = 10; i > 10-string.length(); --i) {
 				sum += Character.getNumericValue(string.charAt(10-i))*i;
-//				System.out.println(Character.getNumericValue(string.charAt(10-i)) + " x " + i);
+				//				System.out.println(Character.getNumericValue(string.charAt(10-i)) + " x " + i);
 			}
-//			System.out.println("Sum = " + sum);
+			//			System.out.println("Sum = " + sum);
 			if (hasX) {
-//				System.out.println("hasx? : " + hasX);
+				//				System.out.println("hasx? : " + hasX);
 				sum += 10;
 			}
 			if (sum%11 == 0) {
-//				System.out.println(true);
+				//				System.out.println(true);
 				return true;
 			}
 		} catch (NumberFormatException e) {
@@ -759,10 +768,19 @@ public class EvaluationService {
 		// length of the panagram should be 26 if all the letters are used 
 
 		// replaceAll(" ", ""); to get rid of spaces in the phrases that match
-
-
-
-
+		HashMap<Character, Integer> hm = new HashMap<>();
+		string = string.replaceAll("\\s+", "");
+		StringBuilder sb = new StringBuilder("abcdefghijklmnopqrstuvwxyz");
+		for (int i = 0; i < string.length(); ++i) {
+			if (hm.containsKey(string.charAt(i))) {
+				hm.put(string.charAt(i), hm.get(string.charAt(i))+1);
+			} else {
+				hm.put(string.charAt(i), 1);
+				sb.deleteCharAt(sb.indexOf(String.valueOf(string.charAt(i))));
+			}
+		}
+		if (sb.length() == 0)
+			return true;
 		return false;
 	}
 
@@ -776,9 +794,31 @@ public class EvaluationService {
 	 */
 	public Temporal getGigasecondDate(Temporal given) {
 		// TODO Write an implementation for this method declaration
-		Temporal temp = given;
-		//temp = temp.plus(amountToAdd, ChronoUnit.SECONDS);
-		return null;
+		//		Temporal temp = given;
+		//		LocalDate ld = LocalDate.of(given.get(ChronoField.YEAR), given.get(ChronoField.MONTH_OF_YEAR), given.get(ChronoField.DAY_OF_MONTH));
+		//		LocalTime lt = LocalTime.of(given.get(ChronoField.HOUR_OF_DAY), given.get(ChronoField.MINUTE_OF_HOUR), given.get(ChronoField.SECOND_OF_MINUTE));
+		//		ZoneId z = ZoneId.of("America/New_York");
+		//		ZonedDateTime zdt = ZonedDateTime.of( ld , lt , z ) ;
+		//Calendar.set(year + 1900, month, date, hrs, min, sec
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(given.get(ChronoField.YEAR), given.get(ChronoField.MONTH_OF_YEAR), given.get(ChronoField.DAY_OF_MONTH),
+				given.get(ChronoField.HOUR_OF_DAY), given.get(ChronoField.MINUTE_OF_HOUR), given.get(ChronoField.SECOND_OF_MINUTE));
+		calendar.add(Calendar.SECOND, 1000000000);
+		//		Instant time = Instant.from(given.);
+		//		time.plusSeconds(1000000000);
+		//		time.adjustInto(given);
+		//		Duration d = Duration.ofSeconds(1000000000);
+		//		ZonedDateTime zdtLater = zdt.plus( d ) ;
+		//		Instant instant = zdtLater.toInstant();
+		//		Long toAdd = d.toDays();
+		//		temp = temp.plus(toAdd, ChronoUnit.DAYS);
+		//		
+		//		temp.toString();
+		//		System.out.println(given.toString());
+		//		return given.plus(1_000_000_000, ChronoUnit.SECONDS);
+		//		System.out.println(zdtLater.toLocalDateTime().toString());
+		System.out.println(calendar.toString());
+		return calendar.toInstant();
 	}
 
 	/**
@@ -796,7 +836,19 @@ public class EvaluationService {
 	 */
 	public int getSumOfMultiples(int i, int[] set) {
 		// TODO Write an implementation for this method declaration
-		return 0;
+		HashSet<Integer> hs = new HashSet<>();
+		for (int j = 1; j < i; ++j) {	//all numbers until i
+			for (int k = 0; k < set.length; ++k) { // check all nums until i with set
+				if (j%set[k] == 0)
+					if (!hs.contains(j))
+						hs.add(j);
+			}
+		}
+		int sum = 0;
+		for (int x : hs) {
+			sum += x;
+		}
+		return sum;
 	}
 
 	/**
@@ -804,7 +856,7 @@ public class EvaluationService {
 	 * 
 	 * The Luhn algorithm is a simple checksum formula used to validate a variety of
 	 * identification numbers, such as credit card numbers and Canadian Social
-	 * Insurance Numbers.
+	 * Insurance Numbers.	
 	 * 
 	 * The task is to check if a given string is valid.
 	 * 
@@ -836,8 +888,26 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isLuhnValid(String string) {
-		// TODO Write an implementation for this method declaration
-		return false;
+		string = string.replaceAll("\\s+", "");
+		try {
+			Long.parseLong(string);
+			int[] numbers = new int[string.length()];
+			for (int i = 0; i < string.length(); ++i) {
+				numbers[i] = Integer.parseInt(String.valueOf(string.charAt(i)));
+			}
+			if (numbers.length > 1) {
+				for (int i = numbers.length-2; i >= 0; i-=2) {
+					numbers[i] = numbers[i]*2 > 9 ? numbers[i]*2-9 : numbers[i]*2;
+				}
+			}
+			int sum = 0;
+			for (int n : numbers)
+				sum+=n;
+			return (sum%10==0);
+		} catch (NumberFormatException nfe) {
+			System.out.println("nfe");
+			return false;
+		}
 	}
 
 	/**
