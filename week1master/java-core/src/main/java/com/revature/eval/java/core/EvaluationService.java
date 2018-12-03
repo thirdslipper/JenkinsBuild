@@ -794,16 +794,17 @@ public class EvaluationService {
 	 */
 	public Temporal getGigasecondDate(Temporal given) {
 		// TODO Write an implementation for this method declaration
-		//		Temporal temp = given;
+				Temporal temp = given;
+				temp = temp.plus(1000000000, ChronoUnit.SECONDS);
 		//		LocalDate ld = LocalDate.of(given.get(ChronoField.YEAR), given.get(ChronoField.MONTH_OF_YEAR), given.get(ChronoField.DAY_OF_MONTH));
 		//		LocalTime lt = LocalTime.of(given.get(ChronoField.HOUR_OF_DAY), given.get(ChronoField.MINUTE_OF_HOUR), given.get(ChronoField.SECOND_OF_MINUTE));
 		//		ZoneId z = ZoneId.of("America/New_York");
 		//		ZonedDateTime zdt = ZonedDateTime.of( ld , lt , z ) ;
 		//Calendar.set(year + 1900, month, date, hrs, min, sec
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(given.get(ChronoField.YEAR), given.get(ChronoField.MONTH_OF_YEAR), given.get(ChronoField.DAY_OF_MONTH),
-				given.get(ChronoField.HOUR_OF_DAY), given.get(ChronoField.MINUTE_OF_HOUR), given.get(ChronoField.SECOND_OF_MINUTE));
-		calendar.add(Calendar.SECOND, 1000000000);
+//		Calendar calendar = Calendar.getInstance();
+//		calendar.set(given.get(ChronoField.YEAR), given.get(ChronoField.MONTH_OF_YEAR), given.get(ChronoField.DAY_OF_MONTH),
+//				given.get(ChronoField.HOUR_OF_DAY), given.get(ChronoField.MINUTE_OF_HOUR), given.get(ChronoField.SECOND_OF_MINUTE));
+//		calendar.add(Calendar.SECOND, 1000000000);
 		//		Instant time = Instant.from(given.);
 		//		time.plusSeconds(1000000000);
 		//		time.adjustInto(given);
@@ -817,8 +818,8 @@ public class EvaluationService {
 		//		System.out.println(given.toString());
 		//		return given.plus(1_000_000_000, ChronoUnit.SECONDS);
 		//		System.out.println(zdtLater.toLocalDateTime().toString());
-		System.out.println(calendar.toString());
-		return calendar.toInstant();
+//		System.out.println(calendar.toString());
+		return temp;
 	}
 
 	/**
