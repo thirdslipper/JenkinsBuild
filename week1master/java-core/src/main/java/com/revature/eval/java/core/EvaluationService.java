@@ -1,5 +1,6 @@
 package com.revature.eval.java.core;
 
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -251,7 +252,7 @@ public class EvaluationService {
 	 * @return
 	 */
 	public Map<String, Integer> wordCount (String string) {
-//		System.out.println("word counter : " + string);
+		//		System.out.println("word counter : " + string);
 		// split the phrase up, put it into an array, and count each of them
 		String[] arr = string.split("\\s+|\n|,\n|,");
 		for (String s : arr)
@@ -267,7 +268,7 @@ public class EvaluationService {
 				expectedWordCount.put(s, count + 1);
 			}
 		}
-//		System.out.println("Expected Word Count : " + expectedWordCount);
+		//		System.out.println("Expected Word Count : " + expectedWordCount);
 		return expectedWordCount;
 	}
 
@@ -511,30 +512,27 @@ public class EvaluationService {
 		public String rotate(String string) {
 			// TODO Write an implementation for this method declaration
 			String lowercase = "abcdefghijklmnopqrstuvwxyz";
-			String reverselower = "";
 			String uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-			String reverseupper = "";
+			String reverseLower = lowercase.substring(key) + lowercase.substring(0, key);
+			String reverseUpper = uppercase.substring(key) + uppercase.substring(0, key);
+			StringBuilder result = new StringBuilder();
 
-			int l = string.length(); // get the length of the string
-			int shift = 0; // number to shift
-
-			//			String[] values = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 
-			//					"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
-
-
-			String s = ""; // empty string to store the then shifted string
-
-
-			for (int i = 0; i < l; i++) {
-				char c = (char)(string.charAt(i) + shift); // Add shift to the character
-				if (c > 'z') {
-					s += (char)(string.charAt(i) - (26-shift)); // if it falls off the end of the alphabet then subtract shift from the number of letters in the alphabet (26)
-				}
-				else {
-					s += (char)(string.charAt(i) + shift); // If the shift does not make the character fall off the end of the alphabet, then add the shift to the character.	
+			int charIndex;
+			for (int i = 0; i < string.length(); ++i) {
+				charIndex = lowercase.indexOf(string.charAt(i));
+				//if lowercase
+				if (charIndex != -1) {
+					result.append(reverseLower.charAt(charIndex));
+					//if uppercase
+				} else if ((charIndex = uppercase.indexOf(string.charAt(i))) != -1){
+					result.append(reverseUpper.charAt(charIndex));
+					//if numbers
+				} else {
+					result.append(string.charAt(i));
 				}
 			}
-			return s; // Append the character onto a new string. Return the string.	
+			System.out.println(result.toString());
+			return result.toString();
 		}
 	}
 
@@ -550,21 +548,48 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int calculateNthPrime(int i) {
-		// TODO Write an implementation for this method declaration
+//		System.out.println("Find the " + i + "th prime.");
+		if (i == 0)
+			throw new IllegalArgumentException("There is no 0th prime.");
+		
+		int nth, count = 0;
+		
+		for (nth = 2, count = 0; count < i; ++nth) {
+			if (checkPrime(nth)) {
+				count++;
+			}
+		}
+//		System.out.println(nth-1);
+		return nth-1;
+	}
+	// Brute force checking of all possible divisions for prime
+	private boolean checkPrime(int nth) {
+		for (int i = 2; i < nth; ++i)
+			if (nth % i == 0)
+				return false;
+		return true;
+	}
+/*	public int calculateNthPrime(int i) {
+		System.out.println("Find the " + i + "th prime.");
 		if (i == 0)
 			throw new IllegalArgumentException("There is no 0th prime.");
 		int count = 0, n = 1, nth = i, j; 
-		/*
+		
 		 * count for 
-		 * n for
+		 * n for starting
 		 * nth for nth number, have it assign to i
 		 * j for 
-		 * */
+		 * 
 		while (count < nth){
 			n += 1;
-
+			
+			 * i = 1, count = 0, n = 2, nth = 1, j = 2, returns i
+			 * 
+			 * 
+			 
 			for (j = 2; j <= n; j++){
 				if (n % j == 0) {
+					count++;
 					break;
 				} else {
 					if (j == n) {
@@ -573,8 +598,9 @@ public class EvaluationService {
 				}
 			}
 		}
+		System.out.println(i);
 		return i;
-	}
+	}*/
 
 	/**
 	 * 13 & 14. Create an implementation of the atbash cipher, an ancient encryption
@@ -613,7 +639,7 @@ public class EvaluationService {
 		static final String decoded = "zyxwvutsrqponmlkjihgfedcba"; 
 
 		public static String encode(String string) {
-			System.out.println("Base string : " + string);
+//			System.out.println("Base string : " + string);
 			string = string.replaceAll("\\s+|\\.|\\,","");
 			StringBuilder sb = new StringBuilder(string.toLowerCase());
 			int numSpaces = string.length()/5;
@@ -634,14 +660,14 @@ public class EvaluationService {
 		 * @return
 		 */
 		public static String decode(String string) {
-			System.out.println("Base String : " + string);
+//			System.out.println("Base String : " + string);
 			StringBuilder sb = new StringBuilder(string.replaceAll("\\s+", ""));
 			return cipherLetterSwap(false, sb);
 		}
 
 		//Swaps all characters in the input to their reverse-alphabet equivalent, barring space.
 		public static String cipherLetterSwap(boolean forward, StringBuilder sb) {
-			System.out.println("Passed string : " + sb.toString());
+//			System.out.println("Passed string : " + sb.toString());
 
 			String alphabet = forward? encoded : decoded;
 			String reverseAlphabet = forward? decoded : encoded;
@@ -652,7 +678,7 @@ public class EvaluationService {
 					sb.replace(i, i+1, String.valueOf(reverseAlphabet.charAt(alphabet.indexOf(sb.charAt(i)))));
 				}
 			}
-			System.out.println("\nResult : " + sb.toString() +"\n");
+//			System.out.println("\nResult : " + sb.toString() +"\n");
 			return sb.toString().trim();
 		}
 	}
@@ -680,7 +706,36 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isValidIsbn(String string) {
-		// TODO Write an implementation for this method declaration
+//		System.out.println("ISBN");
+		string = string.replaceAll("\\-", "");
+		boolean hasX = false;
+//		System.out.println("last char : " + string.charAt(string.length()-1));
+		if (string.charAt(string.length()-1) == 'X'){
+			hasX = true;
+			string = string.replaceAll("X", "");
+		}
+//		System.out.println(string);
+		try {
+			Long.valueOf(string);
+//			System.out.println(Long.valueOf(string));
+			int sum = 0;
+			for (int i = 10; i > 10-string.length(); --i) {
+				sum += Character.getNumericValue(string.charAt(10-i))*i;
+//				System.out.println(Character.getNumericValue(string.charAt(10-i)) + " x " + i);
+			}
+//			System.out.println("Sum = " + sum);
+			if (hasX) {
+//				System.out.println("hasx? : " + hasX);
+				sum += 10;
+			}
+			if (sum%11 == 0) {
+//				System.out.println(true);
+				return true;
+			}
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			return false;
+		}
 		return false;
 	}
 
@@ -721,6 +776,8 @@ public class EvaluationService {
 	 */
 	public Temporal getGigasecondDate(Temporal given) {
 		// TODO Write an implementation for this method declaration
+		Temporal temp = given;
+		//temp = temp.plus(amountToAdd, ChronoUnit.SECONDS);
 		return null;
 	}
 
