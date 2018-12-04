@@ -1,0 +1,51 @@
+2018-11-30 14:04:44 TRACE LoggingExample:8 - This is a trace level message.
+2018-11-30 14:16:51 TRACE LoggingExample:8 - This is a trace level message.
+2018-11-30 14:16:51 DEBUG LoggingExample:9 - This is a debug level message.
+2018-11-30 14:16:51 INFO  LoggingExample:10 - This is an info level message.
+2018-11-30 14:16:51 WARN  LoggingExample:11 - This is a warn level message.
+2018-11-30 14:16:51 ERROR LoggingExample:12 - This is an error level message.
+2018-11-30 14:16:51 FATAL LoggingExample:13 - This is a fatal level message.
+2018-11-30 14:17:12 WARN  LoggingExample:11 - This is a warn level message.
+2018-11-30 14:17:12 ERROR LoggingExample:12 - This is an error level message.
+2018-11-30 14:17:12 FATAL LoggingExample:13 - This is a fatal level message.
+2018-11-30 14:17:44 TRACE LoggingExample:8 - This is a trace level message.
+2018-11-30 14:17:44 DEBUG LoggingExample:9 - This is a debug level message.
+2018-11-30 14:17:44 INFO  LoggingExample:10 - This is an info level message.
+2018-11-30 14:17:44 WARN  LoggingExample:11 - This is a warn level message.
+2018-11-30 14:17:44 ERROR LoggingExample:12 - This is an error level message.
+2018-11-30 14:17:44 FATAL LoggingExample:13 - This is a fatal level message.
+2018-11-30 14:28:45 TRACE CalculatorTest:11 - Testing if division by zero results in infinity.
+2018-11-30 14:31:14 TRACE CalculatorTest:12 - Testing if division by zero results in infinity.
+2018-11-30 14:31:14 TRACE CalculatorTest:18 - Testing if multiplication of zero results in zero.
+2018-11-30 14:33:12 TRACE CalculatorTest:19 - Testing if division by zero results in infinity.
+2018-11-30 14:33:12 TRACE CalculatorTest:14 - Testing if multiplication of zero results in zero.
+2018-11-30 14:35:55 TRACE CalculatorTest:15 - Setting up tests
+2018-11-30 14:35:55 TRACE CalculatorTest:29 - Testing if division by zero results in infinity.
+2018-11-30 14:35:55 TRACE CalculatorTest:20 - tearing down the test (closing resources and such)
+2018-11-30 14:35:55 TRACE CalculatorTest:15 - Setting up tests
+2018-11-30 14:35:55 TRACE CalculatorTest:24 - Testing if multiplication of zero results in zero.
+2018-11-30 14:35:55 TRACE CalculatorTest:20 - tearing down the test (closing resources and such)
+2018-11-30 14:37:41 TRACE CalculatorTest:23 - Setting up tests
+2018-11-30 14:37:41 TRACE CalculatorTest:38 - Testing if division by zero results in infinity.
+2018-11-30 14:37:41 TRACE CalculatorTest:23 - Setting up tests
+2018-11-30 14:37:41 TRACE CalculatorTest:33 - Testing if multiplication of zero results in zero.
+2018-11-30 14:38:36 TRACE CalculatorTest:18 - before tests run
+2018-11-30 14:38:36 TRACE CalculatorTest:23 - Setting up tests
+2018-11-30 14:38:36 TRACE CalculatorTest:38 - Testing if division by zero results in infinity.
+2018-11-30 14:38:36 TRACE CalculatorTest:23 - Setting up tests
+2018-11-30 14:38:36 TRACE CalculatorTest:33 - Testing if multiplication of zero results in zero.
+2018-11-30 14:39:08 TRACE CalculatorTest:18 - before tests run
+2018-11-30 14:39:08 TRACE CalculatorTest:23 - Setting up tests
+2018-11-30 14:39:08 TRACE CalculatorTest:38 - Testing if division by zero results in infinity.
+2018-11-30 14:39:08 TRACE CalculatorTest:29 - tearing down the test (closing resources and such)
+2018-11-30 14:39:08 TRACE CalculatorTest:23 - Setting up tests
+2018-11-30 14:39:08 TRACE CalculatorTest:33 - Testing if multiplication of zero results in zero.
+2018-11-30 14:39:08 TRACE CalculatorTest:29 - tearing down the test (closing resources and such)
+2018-11-30 14:39:49 TRACE CalculatorTest:19 - before tests run
+2018-11-30 14:39:49 TRACE CalculatorTest:24 - Setting up tests
+2018-11-30 14:39:49 TRACE CalculatorTest:43 - Testing if division by zero results in infinity.
+2018-11-30 14:39:49 TRACE CalculatorTest:30 - tearing down the test (closing resources and such)
+2018-11-30 14:39:49 TRACE CalculatorTest:24 - Setting up tests
+2018-11-30 14:39:49 TRACE CalculatorTest:38 - Testing if multiplication of zero results in zero.
+2018-11-30 14:39:49 TRACE CalculatorTest:30 - tearing down the test (closing resources and such)
+2018-11-30 14:39:49 TRACE CalculatorTest:34 - tearing everything down
