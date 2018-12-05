@@ -159,6 +159,36 @@ select (1+rate)*price from book, taxrate where taxrate.state='SC' and book.id=3;
 -- Calculate the price of the book Harry Potter and the Chamber of Secrets for Paul.
 -- find paul
 select id, username, pswd, first_name, last_name from login where first_name='Paul';
--- find his customer details
-select id, username, pswd, first_name, last_name, address_id from customer
-    join login on login.id=customer.id
+-- find all customer details
+select login.id, username, pswd, first_name, last_name, address_id from customer
+    join login on login.id=customer.id;
+-- get addresses
+select c.id, username, pswd, first_name, last_name, a.id, lineone, linetwo, city, state, zip
+    from (select login.id, username, pswd, first_name, last_name, address_id from customer
+    join login on login.id=customer.id) c join address a on a.id = c.address_id;
+
+create or replace view customerdata as (select c.id, username, pswd, first_name, last_name, a.id as "a_id", lineone, linetwo, city, state, zip
+    from (select login.id, username, pswd, first_name, last_name, address_id from customer
+    join login on login.id=customer.id) c join address a on a.id = c.address_id);
+
+select * from customerdata where first_name='Paul';
+select state from customerdata where first_name='Paul';
+select first_name, taxrate.state, rate from customerdata 
+    join taxrate on customerdata.state=taxrate.state where first_name='Paul';
+select * from book, (select first_name, taxrate.state, rate from customerdata 
+    join taxrate on customerdata.state=taxrate.state where first_name='Paul');
+select * from book, (select first_name, taxrate.state, rate from customerdata 
+    join taxrate on customerdata.state=taxrate.state where first_name='Paul') where
+    book.title like 'Harry Potter and the C%';
+    
+select title, first_name, state, (1+rate)*price from (select * from book, (select first_name, taxrate.state, rate from customerdata 
+    join taxrate on customerdata.state=taxrate.state where first_name='Paul') where
+    book.title like 'Harry Potter and the C%');
+
+
+-- Books that J.K. Rowling has written
+
+/*
+    Author      | Book Title    | Price | Paul's Price w/ Tax
+    J.K. Rowling| Harry...      | 
+*/
