@@ -156,5 +156,9 @@ select title, price from book where id=3;
 select * from taxrate where state='SC';
 select (1+rate)*price from book, taxrate where taxrate.state='SC' and book.id=3;
 
--- Calculate the price of the Harry Potter and the Chamber of Secrets for Paul.
-
+-- Calculate the price of the book Harry Potter and the Chamber of Secrets for Paul.
+-- find paul
+select id, username, pswd, first_name, last_name from login where first_name='Paul';
+-- find his customer details
+select id, username, pswd, first_name, last_name, address_id from customer
+    join login on login.id=customer.id
