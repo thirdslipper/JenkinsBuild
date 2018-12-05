@@ -154,4 +154,7 @@ commit;
 -- Calculate how much a book costs in a particular state.
 select title, price from book where id=3;
 select * from taxrate where state='SC';
-(select price from boook where id =3)*(select * from taxrate where state='SC');
+select (1+rate)*price from book, taxrate where taxrate.state='SC' and book.id=3;
+
+-- Calculate the price of the Harry Potter and the Chamber of Secrets for Paul.
+
