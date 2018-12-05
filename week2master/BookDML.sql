@@ -41,5 +41,117 @@ insert into book_author (author_id, book_id)
     
 select b.title, author.firstname, author.lastname from (select * from book join book_author
     on book.id=book_author.book_id) b join author on b.author_id=author.id;
+select * from book where id = 2;
+update book set stock = 498, price = 8.68 where id = 2;
+select * from book where id = 2;
 
+--genre
+insert into genre (genre) values ('Fantasy');
+insert into genre (genre) values ('Non-Fiction');
+insert into genre (genre) values ('Fiction');
+insert into genre (genre) values ('Sci-Fi');
+insert into genre (genre) values ('Historical Romance');
+
+insert into book_genre (book_id, genre_id)
+  values((select id from book where book.TITLE='A Game of Thrones'),
+  (select id from genre where genre='Fantasy'));
+insert into book_genre (book_id, genre_id)
+  values((select id from book where book.TITLE='The Eye of the World'),
+  (select id from genre where genre='Fantasy'));
+insert into book_genre (book_id, genre_id)
+  values((select id from book where book.TITLE='Harry Potter and the Sorcerer''s Stone'),
+  (select id from genre where genre='Fantasy'));
+insert into book_genre (book_id, genre_id)
+  values((select id from book where book.TITLE='Harry Potter and the Chamber of Secrets'),
+  (select id from genre where genre='Fantasy'));
+  
+  -- TAX RATE
+insert into taxrate(state,rate) values('AL',.04);
+insert into taxrate(state,rate) values('AK',.00);
+insert into taxrate(state,rate) values('AZ',.056);
+insert into taxrate(state,rate) values('AR',.065);
+insert into taxrate(state,rate) values('CA',.0725);
+insert into taxrate(state,rate) values('CO',.029);
+insert into taxrate(state,rate) values('CT',.0635);
+insert into taxrate(state,rate) values('DE',.00);
+insert into taxrate(state,rate) values('FL',.06);
+insert into taxrate(state,rate) values('GA',.04);
+
+insert into taxrate(state,rate) values('HI',.04);
+insert into taxrate(state,rate) values('ID',.06);
+insert into taxrate(state,rate) values('IL',.0625);
+insert into taxrate(state,rate) values('IN',.07);
+insert into taxrate(state,rate) values('IA',.06);
+insert into taxrate(state,rate) values('KS',.065);
+insert into taxrate(state,rate) values('KY',.06);
+insert into taxrate(state,rate) values('LA',.05);
+insert into taxrate(state,rate) values('ME',.055);
+insert into taxrate(state,rate) values('MD',.06);
+
+insert into taxrate(state,rate) values('MA',.0625);
+insert into taxrate(state,rate) values('MI',.06);
+insert into taxrate(state,rate) values('MN',.06875);
+insert into taxrate(state,rate) values('MS',.07);
+insert into taxrate(state,rate) values('MO',.04225);
+insert into taxrate(state,rate) values('MT',.00);
+insert into taxrate(state,rate) values('NE',.055);
+insert into taxrate(state,rate) values('NV',.0685);
+insert into taxrate(state,rate) values('NH',.00);
+insert into taxrate(state,rate) values('NJ',.06875);
+
+insert into taxrate(state,rate) values('NM',.05125);
+insert into taxrate(state,rate) values('NY',.04);
+insert into taxrate(state,rate) values('NC',.0475);
+insert into taxrate(state,rate) values('ND',.05);
+insert into taxrate(state,rate) values('OH',.0575);
+insert into taxrate(state,rate) values('OK',.045);
+insert into taxrate(state,rate) values('OR',.00);
+insert into taxrate(state,rate) values('PA',.06);
+insert into taxrate(state,rate) values('RI',.07);
+insert into taxrate(state,rate) values('SC',.06);
+insert into taxrate(state,rate) values('TN',.045);
+insert into taxrate(state,rate) values('TX',.07);
+
+insert into taxrate(state,rate) values('UT',.0595);
+insert into taxrate(state,rate) values('VT',.06);
+insert into taxrate(state,rate) values('VA',.053);
+insert into taxrate(state,rate) values('WA',.065);
+insert into taxrate(state,rate) values('WV',.076);
+insert into taxrate(state,rate) values('WI',.05);
+insert into taxrate(state,rate) values('WY',.04);
+insert into taxrate(state,rate) values('GU',.04);
+insert into taxrate(state,rate) values('PR',.115);
+insert into taxrate(state,rate) values('VI',.00);
+insert into taxrate(state,rate) values('DC',.0575);
+
+insert into address(id, lineone,linetwo,city,state,zip)
+  values(1,'11730 Plaza America Dr','Suite 205','Reston','VA',20170);
+insert into address(id, lineone,linetwo,city,state,zip)
+  values(1,'1 Fantasy Lane',null,'Detroit','MI',48127);
+insert into address(lineone,linetwo,city,state,zip)
+  values('42 Cardinal Dr',null,'St Louis','MO',63101);
+  
+insert into login(first_name,last_name,username, pswd)
+  values('Paul','Maksimovich','paulm','pass');
+insert into login(first_name,last_name,username, pswd)
+  values('Richard','Orr','rorr','pass1');
+insert into login(first_name,last_name,username, pswd)
+  values('Matt','Pierzynski','pski','pwd');
+  
+insert into customer(id, address_id)
+  values((select id from login where username='paulm'), 1);
+insert into customer(id, address_id)
+  values((select id from login where username='rorr'), 2);
+
+insert into emp(id, sup_id, title)
+  values((select id from login where username='pski'), null, 'CEO');
+insert into emp(id, sup_id, title)
+  values((select id from login where username='rorr'),
+  (select id from login where username='pski'), 'Cashier');
 commit;
+
+
+-- Calculate how much a book costs in a particular state.
+select title, price from book where id=3;
+select * from taxrate where state='SC';
+(select price from boook where id =3)*(select * from taxrate where state='SC');
