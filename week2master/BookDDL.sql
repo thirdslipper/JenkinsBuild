@@ -220,7 +220,7 @@ begin
 end;
 /
 drop table auditbook cascade constraints;
-drop sequence audit_book_seq cascade constraints;
+drop sequence audit_book_seq;
 create table auditbook
 (
   auditid number(20) primary key,
