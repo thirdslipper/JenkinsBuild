@@ -266,17 +266,149 @@ end;
 create or replace function calculateTax
 (book_id in number, cust_id in number)
 return number
-is --as
--- declare variables for use in the code block
-book_price number(10,2);
+is
+-- declare variables we want to use inside of our PL/SQL block
+book_price number(10, 2);
 home_state varchar2(3);
 tax_rate number(5,5);
 begin
-    -- I can run DQL statements in sequence and then return a value.
+    -- Functions allow me to run DQL statements in sequence and return a value.
     select state into home_state from customer join address
         on customer.address_id=address.id where customer.id = cust_id;
-    select rate into tax_rate from taxrate where state=home_state;
-    select price into book_price from book where id =book_id;
-    return book_price * (1+tax_rate);
+    select rate into tax_rate from taxrate where state = home_state;
+    select price into book_price from book where id=book_id;
+    return book_price*(1+tax_rate);
 end;
+/
+
+create or replace function calculateTax2
+(total in number, cust_id in number)
+return number
+is
+-- declare variables we want to use inside of our PL/SQL block
+home_state varchar2(3);
+tax_rate number(5,5);
+begin
+    -- Functions allow me to run DQL statements in sequence and return a value.
+    select state into home_state from customer join address
+        on customer.address_id=address.id where customer.id = cust_id;
+    select rate into tax_rate from taxrate where state = home_state;
+    return round(total*(1+tax_rate),2);
+end;
+/
+-- Stored Procedure
+/* A PL/SQL block with a name that we can re-use.
+    it has in, out, and inout parameters
+    we can use DML, TCL, and DQL
+    It has NO return, we cannot call a stored procedure as part of another statement.
+    We can call other stored procs and functions inside of a stored procedure.
+    */
+create or replace procedure add_book_to_cart
+(purchase_in in number, book_in in number,
+    total_out out number, updated_row out sys_refcursor)
+as
+--declare variables
+cust_id number(20);
+book_stock number(5);
+new_stock number(5);
+num_in_cart number(5);
+sum_purchase number(10,2);
+begin
+    set transaction name 'add_book';
+    --set transaction isolation level serializable;
+    select stock into book_stock from book where book.id=book_in;
+    if book_stock>0 then
+        savepoint add_book;
+        -- 1. Update our stock
+        update book set stock = (stock-1) where book.id=book_in;
+        -- check to see if we already have a copy of the book "in the cart"
+        select count(*) into num_in_cart from purchase_book p
+            where p.book_id=book_in and p.purchase_id =purchase_in;
+        -- 2. Update the cart
+        if num_in_cart = 0 then
+            -- insert the invoice line to the cart
+            insert into purchase_book(purchase_Id, book_id, quantity)
+                values(purchase_in, book_in, 1);
+        else
+            -- increment the quantity in the cart
+            update purchase_book set quantity = quantity+1
+                where book_id = book_in and purchase_id = purchase_in;
+        end if;
+        -- 3. Update the total
+        select sum(purchase_book.quantity * book.price) into sum_purchase
+            from purchase_book join book on book.id=purchase_book.book_id
+            where purchase_book.purchase_id=purchase_in;
+            
+        select customer_id into cust_id from purchase where id = purchase_in;
+        select calculatetax2(sum_purchase, cust_id) into total_out from dual;
+        update purchase set total = total_out where id = purchase_in;
+        
+        select stock into new_stock from book where book.id=book_in;
+        if(book_stock-1) = new_stock then
+            commit;
+        else
+            rollback to add_book;
+        end if;
+    end if;
+    -- sysrefcursor stuff
+    open updated_row for select * from purchase_book where purchase_id=purchase_in;
+    --set transaction isolation level read committed;
+end;
+/
+
+create or replace procedure remove_book_from_cart
+(purchase_in in number, book_in in number, total_out out number, updated_row out sys_refcursor)
+as
+--declare variables
+cust_id number(20);
+book_stock number(5);
+num_in_cart number(5);
+sum_purchase number(10,2);
+begin
+  --create a spot to save our current state.
+  savepoint remove_book;
+  --update book stock
+  update book set stock= ((select stock from book where book.id=book_in)+1)
+      where book.id=book_in;
+  --remove the book from the shopping cart
+  select count(*) into num_in_cart from purchase_book p
+    where p.book_id = book_in and p.purchase_id = purchase_in;
+    if num_in_cart > 0 then
+      --update
+      update purchase_book set quantity = quantity-1
+        where book_id = book_in and purchase_id = purchase_in;
+      select quantity into book_stock from purchase_book p
+        where p.book_id = book_in and p.purchase_id = purchase_in;
+      if book_stock < 1 then
+        delete from purchase_book where book_id=book_in and purchase_id = purchase_in;
+      end if;
+      -- update total
+      select SUM(purchase_book.quantity*book.PRICE) into sum_purchase from purchase_book join book on book.ID=purchase_book.BOOK_ID where purchase_book.purchase_id = purchase_in;
+      select customer_id into cust_id from purchase where id=purchase_in;
+      select calculatetax2(sum_purchase,cust_id) into total_out from dual;
+      update purchase set total=total_out where id=purchase_in;
+    else
+      -- failure
+      rollback to remove_book;
+    end if;
+  open updated_row for select * from purchase_book where purchase_id=purchase_in;
+end remove_book_from_cart;
+/
+
+create or replace procedure empty_cart
+(purch_id IN number)
+as -- everything below is part of the procedure
+-- declare variables
+CURSOR purchases
+is
+select book_id, quantity from purchase_book where purchase_id = purch_id;
+begin
+  for res in purchases
+  loop
+    update book set stock = stock+res.quantity where id=res.book_id;
+    delete from purchase_book where book_id = res.book_id and purchase_id = purch_id;
+  end loop;
+  delete from purchase where id = purch_id;
+  commit;
+end empty_cart;
 /

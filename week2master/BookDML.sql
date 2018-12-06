@@ -207,7 +207,66 @@ select author_name, title, price, (1+rate)*price AS PRICE_WITH_TAX from
    (select book_id, author_id, firstname||' '||lastname as author_name from author, book_author where author.id = book_author.author_id and firstname='J.K.')
    where book_id=id;
 
+/* Seth Majeski */
+select a.firstname, a.lastname, b.title, b.price,round(calculatetax(b.id,1),2)
+    from (author a join book_author ba on a.id = ba.author_id)
+    join book b on ba.book_id = b.id where a.firstname = 'J.K.';
+/* Seth Two */
+select concat(concat(a.firstname, ' '),a.lastname)as "AUTHOR", b.title as "Book Title",
+    b.price,round(calculatetax(b.id,1),2)as "PAUL'S TOTAL" 
+    from (author a join book_author ba
+   on a.id = ba.author_id)join book b
+   on ba.book_id = b.id where a.firstname = 'J.K.';
+/* Jamarius Epperson */
+select concat(a.firstname, a.lastname) as "author", b.title, b.price,
+    round(calculatetax(b.id,1),2) as "Paul's Total" from 
+    (author a join book_author ba on a.id = ba.author_id)
+    join book b on ba.book_id = b.id where a.firstname = 'J.K.';
 
+/* Me */
+select firstname||' '||lastname as name,
+  book.price, price * (1+(select rate from taxrate where state = 'WV'))
+  as "WV Total" from 
+  (select * from author a join book_author b on a.id=b.author_id)
+  join book on book.id = book_id;
+-- Thomas 
+select a.firstname || ' ' ||a.lastname as "Author",
+      b.title,
+      b.price,
+      b.price * (1+ (select rate from taxrate where state = 'WV')) as "WV Total"
+ from author a
+ join book_author ba on a.id = ba.author_id
+ join book b on ba.book_id = b.id;
+
+
+-- purchases
+--make the purchase in the purchase table
+insert into purchase(customer_id, status) values (
+    (select id from login where username='paulm'), 'OPEN');
+insert into purchase(customer_id, status) values (
+    (select id from login where username='rorr'), 'OPEN');
+
+-- Enable console output for plsql
+set serveroutput on;
+
+declare
+    curs sys_refcursor;
+    purch number;
+    book number;
+    total number;
+    quantity number;
+begin
+    add_book_to_cart(2,1,total,curs);
+    dbms_output.put_line(total);
+    loop
+        fetch curs into purch, book, quantity;
+        exit when curs%NOTFOUND;
+        dbms_output.put_line('['||purch||' | '||book||' | '||quantity||']');
+    end loop;
+end;
+/
+
+exec empty_cart(2);
 
 update book set 
     cover='https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg/220px-Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg'
