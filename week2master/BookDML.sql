@@ -192,3 +192,24 @@ select title, first_name, state, (1+rate)*price from (select * from book, (selec
     Author      | Book Title    | Price | Paul's Price w/ Tax
     J.K. Rowling| Harry...      | 
 */
+-- David Donnelly
+select firstname, lastname, title, price from
+   (book bk join (select * from book_author a join author b on b.id=a.author_id where b.firstname='J.K.')
+   ba on bk.id = ba.book_id);
+--Mateusz Wiater
+select author_name, title, price, (1+rate)*price AS PRICE_WITH_TAX from
+   (select * from book, (select first_name, taxrate.state, rate from customerdata join taxrate on customerdata.state=taxrate.state where first_name='Paul')),
+   (select book_id, author_id, concat(concat(firstname,' '),lastname) as author_name from author, book_author where author.id = book_author.author_id and firstname='J.K.')
+   where book_id=id;
+-- ME (blatantly copying Mateusz' code)
+select author_name, title, price, (1+rate)*price AS PRICE_WITH_TAX from
+   (select * from book, (select first_name, taxrate.state, rate from customerdata join taxrate on customerdata.state=taxrate.state where first_name='Paul')),
+   (select book_id, author_id, firstname||' '||lastname as author_name from author, book_author where author.id = book_author.author_id and firstname='J.K.')
+   where book_id=id;
+
+
+
+update book set 
+    cover='https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg/220px-Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg'
+    where id=(select id from book where title like 'Harry Potter and the S%');
+commit;

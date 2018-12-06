@@ -254,3 +254,29 @@ begin
   :old.stock, :new.stock, :old.cover, :new.cover, systimestamp );
 end;
 /
+
+-- Custom function
+/* Function is a reusable PL/SQL block.
+    It takes in parameters (in, out, or inout) (using out or inout inside a function
+        is considered bad practice)
+    Functions have a return, and therefore can be used inside other statements.
+        (select, insert, update, delete)
+    Functions can use DQL and call other functions.
+*/
+create or replace function calculateTax
+(book_id in number, cust_id in number)
+return number
+is --as
+-- declare variables for use in the code block
+book_price number(10,2);
+home_state varchar2(3);
+tax_rate number(5,5);
+begin
+    -- I can run DQL statements in sequence and then return a value.
+    select state into home_state from customer join address
+        on customer.address_id=address.id where customer.id = cust_id;
+    select rate into tax_rate from taxrate where state=home_state;
+    select price into book_price from book where id =book_id;
+    return book_price * (1+tax_rate);
+end;
+/
