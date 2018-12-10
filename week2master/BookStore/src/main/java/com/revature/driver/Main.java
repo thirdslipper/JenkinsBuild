@@ -32,7 +32,9 @@ public class Main {
 	
 	private static void dao() {
 		GenreDAO gd = bf.getGenreDAO();
-		System.out.println(gd.getGenre(3));
+//		System.out.println(gd.getGenre(3));
+
+		System.out.println(gd.getGenres());
 	}
 
 	private static void login() {

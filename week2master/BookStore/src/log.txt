@@ -94,3 +94,168 @@
 2018-12-10 13:20:06 TRACE GenreOracle:30 - Attempting to find genre with id = 3
 2018-12-10 13:20:08 TRACE GenreOracle:38 - Found genre: 3 Fiction
 2018-12-10 13:20:08 TRACE GenreOracle:48 - Returning genre: Genre [id=3, genre=Fiction]
+2018-12-10 13:50:04 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 13:50:04 ERROR ConnectionUtil:8 - class java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - -1: java.net.URLClassLoader
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - -1: sun.misc.Launcher$AppClassLoader
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - -2: java.lang.Class
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - -1: java.lang.Class
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - 33: com.revature.util.ConnectionUtil
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - 34: com.revature.data.GenreOracle
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - 35: com.revature.driver.Main
+2018-12-10 13:50:04 WARN  ConnectionUtil:10 - 30: com.revature.driver.Main
+2018-12-10 13:50:48 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 13:50:48 ERROR ConnectionUtil:8 - class java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: java.net.URLClassLoader
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: sun.misc.Launcher$AppClassLoader
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -2: java.lang.Class
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: java.lang.Class
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - 33: com.revature.util.ConnectionUtil
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - 34: com.revature.data.GenreOracle
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - 35: com.revature.driver.Main
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - 30: com.revature.driver.Main
+2018-12-10 13:50:48 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 13:50:48 ERROR ConnectionUtil:8 - class java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: java.net.URLClassLoader
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: sun.misc.Launcher$AppClassLoader
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -2: java.lang.Class
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - -1: java.lang.Class
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - 33: com.revature.util.ConnectionUtil
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - 34: com.revature.data.GenreOracle
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - 35: com.revature.driver.Main
+2018-12-10 13:50:48 WARN  ConnectionUtil:10 - 30: com.revature.driver.Main
+2018-12-10 13:52:23 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 13:52:23 ERROR ConnectionUtil:8 - class java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - -1: java.net.URLClassLoader
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - -1: sun.misc.Launcher$AppClassLoader
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - -2: java.lang.Class
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - -1: java.lang.Class
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - 33: com.revature.util.ConnectionUtil
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - 34: com.revature.data.GenreOracle
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - 35: com.revature.driver.Main
+2018-12-10 13:52:23 WARN  ConnectionUtil:10 - 30: com.revature.driver.Main
+2018-12-10 13:53:51 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 13:53:51 ERROR ConnectionUtil:8 - class java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - -1: java.net.URLClassLoader
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - -1: sun.misc.Launcher$AppClassLoader
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - -1: java.lang.ClassLoader
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - -2: java.lang.Class
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - -1: java.lang.Class
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - 33: com.revature.util.ConnectionUtil
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - 34: com.revature.data.GenreOracle
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - 35: com.revature.driver.Main
+2018-12-10 13:53:51 WARN  ConnectionUtil:10 - 30: com.revature.driver.Main
+2018-12-10 13:57:11 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 13:57:12 TRACE GenreOracle:39 - Found genre: 3 Fiction
+2018-12-10 13:57:12 TRACE GenreOracle:49 - Returning genre: Genre [id=3, genre=Fiction]
+2018-12-10 13:58:23 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 13:58:24 ERROR Main:8 - class java.sql.SQLException: Invalid column name
+2018-12-10 13:58:24 WARN  Main:10 - 3724: oracle.jdbc.driver.OracleStatement
+2018-12-10 13:58:24 WARN  Main:10 - 2799: oracle.jdbc.driver.OracleResultSetImpl
+2018-12-10 13:58:24 WARN  Main:10 - 438: oracle.jdbc.driver.OracleResultSet
+2018-12-10 13:58:24 WARN  Main:10 - 87: com.revature.data.GenreOracle
+2018-12-10 13:58:24 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 13:58:24 WARN  Main:10 - 30: com.revature.driver.Main
+2018-12-10 13:58:24 TRACE GenreOracle:98 - Returning genre: null
+2018-12-10 13:59:21 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 13:59:22 TRACE GenreOracle:39 - Found genre: 3 Fiction
+2018-12-10 13:59:22 TRACE GenreOracle:49 - Returning genre: Genre [id=3, genre=Fiction]
+2018-12-10 13:59:22 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 13:59:23 ERROR Main:8 - class java.sql.SQLException: Invalid column name
+2018-12-10 13:59:23 WARN  Main:10 - 3724: oracle.jdbc.driver.OracleStatement
+2018-12-10 13:59:23 WARN  Main:10 - 2799: oracle.jdbc.driver.OracleResultSetImpl
+2018-12-10 13:59:23 WARN  Main:10 - 438: oracle.jdbc.driver.OracleResultSet
+2018-12-10 13:59:23 WARN  Main:10 - 87: com.revature.data.GenreOracle
+2018-12-10 13:59:23 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 13:59:23 WARN  Main:10 - 30: com.revature.driver.Main
+2018-12-10 13:59:23 TRACE GenreOracle:98 - Returning genre: null
+2018-12-10 14:01:12 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 14:01:14 TRACE GenreOracle:39 - Found genre: 3 Fiction
+2018-12-10 14:01:14 TRACE GenreOracle:49 - Returning genre: Genre [id=3, genre=Fiction]
+2018-12-10 14:01:14 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 14:01:14 ERROR Main:8 - class java.sql.SQLException: Invalid column name
+2018-12-10 14:01:14 WARN  Main:10 - 3724: oracle.jdbc.driver.OracleStatement
+2018-12-10 14:01:14 WARN  Main:10 - 2799: oracle.jdbc.driver.OracleResultSetImpl
+2018-12-10 14:01:14 WARN  Main:10 - 438: oracle.jdbc.driver.OracleResultSet
+2018-12-10 14:01:14 WARN  Main:10 - 87: com.revature.data.GenreOracle
+2018-12-10 14:01:14 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 14:01:14 WARN  Main:10 - 30: com.revature.driver.Main
+2018-12-10 14:01:14 TRACE GenreOracle:98 - Returning genre: null
+2018-12-10 14:03:10 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 14:03:11 TRACE GenreOracle:39 - Found genre: 3 Fiction
+2018-12-10 14:03:11 TRACE GenreOracle:49 - Returning genre: Genre [id=3, genre=Fiction]
+2018-12-10 14:03:11 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 14:03:11 ERROR Main:8 - class java.sql.SQLException: Invalid column name
+2018-12-10 14:03:11 WARN  Main:10 - 3724: oracle.jdbc.driver.OracleStatement
+2018-12-10 14:03:11 WARN  Main:10 - 2799: oracle.jdbc.driver.OracleResultSetImpl
+2018-12-10 14:03:11 WARN  Main:10 - 438: oracle.jdbc.driver.OracleResultSet
+2018-12-10 14:03:11 WARN  Main:10 - 87: com.revature.data.GenreOracle
+2018-12-10 14:03:11 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 14:03:11 WARN  Main:10 - 30: com.revature.driver.Main
+2018-12-10 14:03:11 TRACE GenreOracle:98 - Returning genre: []
+2018-12-10 14:06:24 TRACE GenreOracle:31 - Attempting to find genre with id = 3
+2018-12-10 14:06:28 TRACE GenreOracle:39 - Found genre: 3 Fiction
+2018-12-10 14:06:28 TRACE GenreOracle:49 - Returning genre: Genre [id=3, genre=Fiction]
+2018-12-10 14:06:28 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 14:06:28 TRACE GenreOracle:87 - Found genre:  Fantasy
+2018-12-10 14:06:28 ERROR Main:8 - class java.sql.SQLException: Invalid column name
+2018-12-10 14:06:28 WARN  Main:10 - 3724: oracle.jdbc.driver.OracleStatement
+2018-12-10 14:06:28 WARN  Main:10 - 2799: oracle.jdbc.driver.OracleResultSetImpl
+2018-12-10 14:06:28 WARN  Main:10 - 438: oracle.jdbc.driver.OracleResultSet
+2018-12-10 14:06:28 WARN  Main:10 - 89: com.revature.data.GenreOracle
+2018-12-10 14:06:28 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 14:06:28 WARN  Main:10 - 30: com.revature.driver.Main
+2018-12-10 14:06:28 TRACE GenreOracle:96 - Returning genre: Genre [id=null, genre=null]
+2018-12-10 14:07:33 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 14:07:34 TRACE GenreOracle:87 - Found genre:  1 Fantasy
+2018-12-10 14:07:34 TRACE GenreOracle:87 - Found genre:  3 Fiction
+2018-12-10 14:07:34 TRACE GenreOracle:87 - Found genre:  5 Historical Romance
+2018-12-10 14:07:34 TRACE GenreOracle:87 - Found genre:  2 Non-Fiction
+2018-12-10 14:07:34 TRACE GenreOracle:87 - Found genre:  4 Sci-Fi
+2018-12-10 14:07:34 TRACE GenreOracle:96 - Returning genre: Genre [id=4, genre=Sci-Fi]
+2018-12-10 14:10:00 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 14:10:01 TRACE GenreOracle:87 - Found genre:  1 Fantasy
+2018-12-10 14:10:01 TRACE GenreOracle:87 - Found genre:  3 Fiction
+2018-12-10 14:10:01 TRACE GenreOracle:87 - Found genre:  5 Historical Romance
+2018-12-10 14:10:01 TRACE GenreOracle:87 - Found genre:  2 Non-Fiction
+2018-12-10 14:10:01 TRACE GenreOracle:87 - Found genre:  4 Sci-Fi
+2018-12-10 14:10:01 TRACE GenreOracle:96 - Returning genre: Genre [id=4, genre=Sci-Fi]
+2018-12-10 14:10:46 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 14:10:46 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Fantasy
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Fiction
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Historical Romance
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Non-Fiction
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Sci-Fi
+2018-12-10 14:10:47 TRACE GenreOracle:96 - Returning genre: Genre [id=null, genre=Sci-Fi]
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Fantasy
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Fiction
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Historical Romance
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Non-Fiction
+2018-12-10 14:10:47 TRACE GenreOracle:87 - Found genre:  Sci-Fi
+2018-12-10 14:10:47 TRACE GenreOracle:96 - Returning genre: Genre [id=null, genre=Sci-Fi]
+2018-12-10 14:11:22 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 14:11:23 TRACE GenreOracle:87 - Found genre:  Fantasy
+2018-12-10 14:11:23 TRACE GenreOracle:87 - Found genre:  Fiction
+2018-12-10 14:11:23 TRACE GenreOracle:87 - Found genre:  Historical Romance
+2018-12-10 14:11:23 TRACE GenreOracle:87 - Found genre:  Non-Fiction
+2018-12-10 14:11:23 TRACE GenreOracle:87 - Found genre:  Sci-Fi
+2018-12-10 14:11:23 TRACE GenreOracle:96 - Returning genre: [Genre [id=null, genre=Historical Romance], Genre [id=null, genre=Sci-Fi], Genre [id=null, genre=Fiction], Genre [id=null, genre=Non-Fiction], Genre [id=null, genre=Fantasy]]
+2018-12-10 14:12:18 TRACE GenreOracle:79 - Attempting to get the collection genres
+2018-12-10 14:12:19 ERROR Main:8 - class java.sql.SQLException: Invalid column name
+2018-12-10 14:12:19 WARN  Main:10 - 3724: oracle.jdbc.driver.OracleStatement
+2018-12-10 14:12:19 WARN  Main:10 - 2799: oracle.jdbc.driver.OracleResultSetImpl
+2018-12-10 14:12:19 WARN  Main:10 - 438: oracle.jdbc.driver.OracleResultSet
+2018-12-10 14:12:19 WARN  Main:10 - 87: com.revature.data.GenreOracle
+2018-12-10 14:12:19 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 14:12:19 WARN  Main:10 - 30: com.revature.driver.Main
+2018-12-10 14:12:19 TRACE GenreOracle:96 - Returning genre: []

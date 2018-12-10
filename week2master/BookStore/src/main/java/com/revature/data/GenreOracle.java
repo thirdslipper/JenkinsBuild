@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -29,7 +30,7 @@ public class GenreOracle implements GenreDAO{
 	public Genre getGenre(Integer id) {
 		log.trace("Attempting to find genre with id = "+id);
 		Genre genre = null;
-		String sql = "select id, genre from genre where id =?";
+		String sql = "select id, genre from genre where id = ?";
 		try(Connection conn = cu.getConnection()){
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, id);
@@ -75,14 +76,50 @@ public class GenreOracle implements GenreDAO{
 
 	@Override
 	public Set<Genre> getGenres() {
-		// TODO Auto-generated method stub
-		return null;
+		log.trace("Attempting to get the collection genres");
+		Set<Genre> genreSet = new HashSet<Genre>();
+		Genre g = null;
+		String sql = "select genre from genre";
+		try(Connection conn = cu.getConnection()){
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				log.trace("Found genre: "+" "+rs.getInt("id")+" "+rs.getString("genre"));
+				g = new Genre();
+				g.setId(rs.getInt("id"));
+				g.setGenre(rs.getString("genre"));
+				genreSet.add(g);
+			} 
+		} catch(SQLException e) {
+			LogUtil.logException(e, Main.class);
+		}
+		log.trace("Returning genre: "+genreSet);
+		return genreSet;
 	}
 
 	@Override
 	public Set<Genre> getGenresByBook(Book b) {
-		// TODO Auto-generated method stub
-		return null;
+		log.trace("Attempting to get the genres of a book");
+		Set<Genre> genreSet = new HashSet<Genre>();
+		Genre g = null;
+		String sql = "select genre from genre join book_genre on genre.id = book_genre.genre_id";
+		try(Connection conn = cu.getConnection()){
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				log.trace("Found genre: "+rs.getInt("id")+" ");
+				g = new Genre();
+				g.setId(rs.getInt("id"));
+				g.setGenre(rs.getString("genre"));
+				genreSet.add(g);
+			} else {
+				log.trace("Genre not found.");
+			}
+		} catch(SQLException e) {
+			LogUtil.logException(e, Main.class);
+		}
+		log.trace("Returning genre: "+g);
+		return genreSet;
 	}
 
 	@Override
