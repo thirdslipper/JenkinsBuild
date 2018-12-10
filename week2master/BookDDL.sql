@@ -266,7 +266,7 @@ end;
 create or replace function calculateTax
 (book_id in number, cust_id in number)
 return number
-is
+is --as
 -- declare variables we want to use inside of our PL/SQL block
 book_price number(10, 2);
 home_state varchar2(3);
