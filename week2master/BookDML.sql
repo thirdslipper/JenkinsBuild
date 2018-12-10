@@ -163,9 +163,23 @@ select id, username, pswd, first_name, last_name from login where first_name='Pa
 select login.id, username, pswd, first_name, last_name, address_id from customer
     join login on login.id=customer.id;
 -- get addresses
-select c.id, username, pswd, first_name, last_name, a.id, lineone, linetwo, city, state, zip
-    from (select login.id, username, pswd, first_name, last_name, address_id from customer
-    join login on login.id=customer.id) c join address a on a.id = c.address_id;
+select
+    c.id, username, pswd, first_name, last_name, a.id, lineone, linetwo, city, state, zip
+from
+    (
+        select
+            login.id, username, pswd, first_name, last_name, address_id
+        from
+            customer
+            join
+            login
+            on
+                login.id=customer.id
+    ) c 
+    join 
+    address a 
+    on
+        a.id = c.address_id;
 
 create or replace view customerdata as (select c.id, username, pswd, first_name, last_name, a.id as "a_id", lineone, linetwo, city, state, zip
     from (select login.id, username, pswd, first_name, last_name, address_id from customer
