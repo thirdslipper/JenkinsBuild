@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
+import com.revature.beans.Book;
 import com.revature.beans.Genre;
 import com.revature.beans.User;
 import com.revature.data.BookAppDAOFactory;
@@ -32,9 +33,32 @@ public class Main {
 	
 	private static void dao() {
 		GenreDAO gd = bf.getGenreDAO();
+<<<<<<< HEAD
 //		System.out.println(gd.getGenre(3));
 
 		System.out.println(gd.getGenres());
+=======
+		//System.out.println(gd.getGenre(3));
+		//System.out.println(gd.getGenres());
+		//Book b = new Book();
+		//b.setId(1);
+		//System.out.println(gd.getGenresByBook(b));
+		
+//		Genre g = gd.getGenre(5);
+//		System.out.println(g);
+//		g.setGenre("Historical Romance");
+//		gd.updateGenre(g);
+//		System.out.println(g);
+//		
+//		g = gd.getGenre(5);
+//		System.out.println(g);
+		
+		/*Genre g = new Genre();
+		g.setGenre("Cyber Punk");
+		int i = gd.addGenre(g);
+		System.out.println(gd.getGenre(i));*/
+		System.out.println(bf.getEmployeeDAO().getEmployees());
+>>>>>>> aa32f9a53b22e7e87c338690ef948a3038a2f6b9
 	}
 
 	private static void login() {

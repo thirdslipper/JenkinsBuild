@@ -94,6 +94,7 @@
 2018-12-10 13:20:06 TRACE GenreOracle:30 - Attempting to find genre with id = 3
 2018-12-10 13:20:08 TRACE GenreOracle:38 - Found genre: 3 Fiction
 2018-12-10 13:20:08 TRACE GenreOracle:48 - Returning genre: Genre [id=3, genre=Fiction]
+<<<<<<< HEAD
 2018-12-10 13:50:04 TRACE GenreOracle:31 - Attempting to find genre with id = 3
 2018-12-10 13:50:04 ERROR ConnectionUtil:8 - class java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
 2018-12-10 13:50:04 WARN  ConnectionUtil:10 - -1: java.net.URLClassLoader
@@ -259,3 +260,50 @@
 2018-12-10 14:12:19 WARN  Main:10 - 37: com.revature.driver.Main
 2018-12-10 14:12:19 WARN  Main:10 - 30: com.revature.driver.Main
 2018-12-10 14:12:19 TRACE GenreOracle:96 - Returning genre: []
+=======
+2018-12-10 14:09:21 TRACE GenreOracle:30 - Attempting to find genre with id = 3
+2018-12-10 14:09:22 TRACE GenreOracle:38 - Found genre: 3 Fiction
+2018-12-10 14:09:22 TRACE GenreOracle:48 - Returning genre: Genre [id=3, genre=Fiction]
+2018-12-10 14:09:22 TRACE GenreOracle:78 - Attempting to find all genres
+2018-12-10 14:09:22 TRACE GenreOracle:85 - Found genre: 1 Fantasy
+2018-12-10 14:09:22 TRACE GenreOracle:85 - Found genre: 2 Non-Fiction
+2018-12-10 14:09:22 TRACE GenreOracle:85 - Found genre: 3 Fiction
+2018-12-10 14:09:22 TRACE GenreOracle:85 - Found genre: 4 Sci-Fi
+2018-12-10 14:09:22 TRACE GenreOracle:85 - Found genre: 5 Historical Romance
+2018-12-10 14:09:22 TRACE GenreOracle:94 - Returning genres: [Genre [id=3, genre=Fiction], Genre [id=1, genre=Fantasy], Genre [id=2, genre=Non-Fiction], Genre [id=4, genre=Sci-Fi], Genre [id=5, genre=Historical Romance]]
+2018-12-10 14:10:09 TRACE GenreOracle:30 - Attempting to find genre with id = 3
+2018-12-10 14:10:09 TRACE GenreOracle:38 - Found genre: 3 Fiction
+2018-12-10 14:10:09 TRACE GenreOracle:48 - Returning genre: Genre [id=3, genre=Fiction]
+2018-12-10 14:10:09 TRACE GenreOracle:78 - Attempting to find all genres
+2018-12-10 14:10:09 TRACE GenreOracle:85 - Found genre: 1 Fantasy
+2018-12-10 14:10:09 TRACE GenreOracle:85 - Found genre: 2 Non-Fiction
+2018-12-10 14:10:09 TRACE GenreOracle:85 - Found genre: 3 Fiction
+2018-12-10 14:10:09 TRACE GenreOracle:85 - Found genre: 4 Sci-Fi
+2018-12-10 14:10:09 TRACE GenreOracle:85 - Found genre: 5 Historical Romance
+2018-12-10 14:10:09 TRACE GenreOracle:94 - Returning genres: [Genre [id=3, genre=Fiction], Genre [id=1, genre=Fantasy], Genre [id=2, genre=Non-Fiction], Genre [id=4, genre=Sci-Fi], Genre [id=5, genre=Historical Romance]]
+2018-12-10 14:10:09 TRACE GenreOracle:100 - Attempting to find genres by book: Book [id=1, title=null, isbn10=null, isbn13=null, authors=null, price=null, stock=null, cover=null, genres=null]
+2018-12-10 14:10:10 TRACE GenreOracle:110 - Found genre: 1 Fantasy
+2018-12-10 14:10:10 TRACE GenreOracle:119 - Returning genre: [Genre [id=1, genre=Fantasy]]
+2018-12-10 14:16:32 TRACE GenreOracle:30 - Attempting to find genre with id = 5
+2018-12-10 14:16:32 TRACE GenreOracle:38 - Found genre: 5 Historical Romance
+2018-12-10 14:16:32 TRACE GenreOracle:48 - Returning genre: Genre [id=5, genre=Historical Romance]
+2018-12-10 14:16:32 TRACE GenreOracle:125 - Updating Genre to Genre [id=5, genre=historical romance]
+2018-12-10 14:16:34 TRACE GenreOracle:145 - Update ending.
+2018-12-10 14:16:34 TRACE GenreOracle:30 - Attempting to find genre with id = 5
+2018-12-10 14:16:34 TRACE GenreOracle:38 - Found genre: 5 historical romance
+2018-12-10 14:16:34 TRACE GenreOracle:48 - Returning genre: Genre [id=5, genre=historical romance]
+2018-12-10 14:19:25 TRACE GenreOracle:30 - Attempting to find genre with id = 5
+2018-12-10 14:19:26 TRACE GenreOracle:38 - Found genre: 5 historical romance
+2018-12-10 14:19:26 TRACE GenreOracle:48 - Returning genre: Genre [id=5, genre=historical romance]
+2018-12-10 14:19:26 TRACE GenreOracle:125 - Updating Genre to Genre [id=5, genre=Historical Romance]
+2018-12-10 14:19:26 TRACE GenreOracle:147 - Update ending.
+2018-12-10 14:19:26 TRACE GenreOracle:30 - Attempting to find genre with id = 5
+2018-12-10 14:19:26 TRACE GenreOracle:38 - Found genre: 5 Historical Romance
+2018-12-10 14:19:26 TRACE GenreOracle:48 - Returning genre: Genre [id=5, genre=Historical Romance]
+2018-12-10 14:34:28 TRACE GenreOracle:25 - Inserting a genre into the database.
+2018-12-10 14:34:29 TRACE GenreOracle:40 - Insert successful
+2018-12-10 14:34:29 TRACE GenreOracle:65 - Attempting to find genre with id = 6
+2018-12-10 14:34:29 TRACE GenreOracle:73 - Found genre: 6 Cyber Punk
+2018-12-10 14:34:29 TRACE GenreOracle:83 - Returning genre: Genre [id=6, genre=Cyber Punk]
+2018-12-10 15:10:33 TRACE EmployeeOracle:112 - null supervisor
+>>>>>>> aa32f9a53b22e7e87c338690ef948a3038a2f6b9

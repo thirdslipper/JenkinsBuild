@@ -2,8 +2,8 @@ package com.revature.beans;
 
 public class Address {
 	private Integer id;
-	private String lineone;
-	private String linetwo;
+	private String lineOne;
+	private String lineTwo;
 	private String city;
 	private String state;
 	private String zip;
@@ -17,8 +17,8 @@ public class Address {
 	public Address(Integer id, String lineone, String linetwo, String city, String state, String zip) {
 		super();
 		this.id = id;
-		this.lineone = lineone;
-		this.linetwo = linetwo;
+		this.lineOne = lineone;
+		this.lineTwo = linetwo;
 		this.city = city;
 		this.state = state;
 		this.zip = zip;
@@ -29,17 +29,17 @@ public class Address {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getLineone() {
-		return lineone;
+	public String getLineOne() {
+		return lineOne;
 	}
-	public void setLineone(String lineone) {
-		this.lineone = lineone;
+	public void setLineOne(String lineOne) {
+		this.lineOne = lineOne;
 	}
-	public String getLinetwo() {
-		return linetwo;
+	public String getLineTwo() {
+		return lineTwo;
 	}
-	public void setLinetwo(String linetwo) {
-		this.linetwo = linetwo;
+	public void setLineTwo(String linetwo) {
+		this.lineTwo = linetwo;
 	}
 	public String getCity() {
 		return city;
@@ -65,8 +65,8 @@ public class Address {
 		int result = 1;
 		result = prime * result + ((city == null) ? 0 : city.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((lineone == null) ? 0 : lineone.hashCode());
-		result = prime * result + ((linetwo == null) ? 0 : linetwo.hashCode());
+		result = prime * result + ((lineOne == null) ? 0 : lineOne.hashCode());
+		result = prime * result + ((lineTwo == null) ? 0 : lineTwo.hashCode());
 		result = prime * result + ((state == null) ? 0 : state.hashCode());
 		result = prime * result + ((zip == null) ? 0 : zip.hashCode());
 		return result;
@@ -90,15 +90,15 @@ public class Address {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (lineone == null) {
-			if (other.lineone != null)
+		if (lineOne == null) {
+			if (other.lineOne != null)
 				return false;
-		} else if (!lineone.equals(other.lineone))
+		} else if (!lineOne.equals(other.lineOne))
 			return false;
-		if (linetwo == null) {
-			if (other.linetwo != null)
+		if (lineTwo == null) {
+			if (other.lineTwo != null)
 				return false;
-		} else if (!linetwo.equals(other.linetwo))
+		} else if (!lineTwo.equals(other.lineTwo))
 			return false;
 		if (state == null) {
 			if (other.state != null)
@@ -114,7 +114,7 @@ public class Address {
 	}
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", lineone=" + lineone + ", linetwo=" + linetwo + ", city=" + city + ", state="
+		return "Address [id=" + id + ", lineone=" + lineOne + ", linetwo=" + lineTwo + ", city=" + city + ", state="
 				+ state + ", zip=" + zip + "]";
 	}
 }
