@@ -15,3 +15,82 @@
 2018-12-10 11:17:09 TRACE Main:26 - 3 Harry Potter and the Sorcerer's Stone
 2018-12-10 11:17:09 TRACE Main:26 - 4 Harry Potter and the Chamber of Secrets
 2018-12-10 11:22:23 TRACE Main:29 - 5 Historical Romance
+2018-12-10 11:36:38 TRACE Main:44 - select * from login where username = 'rorr' and pswd='pass1'
+2018-12-10 11:39:17 TRACE Main:44 - select * from login where username = 'rorr' and pswd='pass1'
+2018-12-10 11:39:17 ERROR Main:8 - class java.sql.SQLException: ResultSet.next was not called
+2018-12-10 11:39:17 WARN  Main:10 - 931: oracle.jdbc.driver.OracleResultSetImpl
+2018-12-10 11:39:17 WARN  Main:10 - 438: oracle.jdbc.driver.OracleResultSet
+2018-12-10 11:39:17 WARN  Main:10 - 49: com.revature.driver.Main
+2018-12-10 11:39:17 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 11:39:17 WARN  Main:10 - 23: com.revature.driver.Main
+2018-12-10 11:40:01 TRACE Main:44 - select * from login where username = 'rorr' and pswd='pass1'
+2018-12-10 11:40:21 TRACE Main:44 - select * from login where username = 'rorr' and pswd='pass1'
+2018-12-10 11:42:19 TRACE Main:44 - select * from login where username = 'rorr';Drop table taxrate cascade constraints;--' and pswd=''
+2018-12-10 11:42:19 ERROR Main:8 - class java.sql.SQLSyntaxErrorException: ORA-00911: invalid character
+
+2018-12-10 11:42:19 WARN  Main:10 - 447: oracle.jdbc.driver.T4CTTIoer
+2018-12-10 11:42:19 WARN  Main:10 - 396: oracle.jdbc.driver.T4CTTIoer
+2018-12-10 11:42:19 WARN  Main:10 - 951: oracle.jdbc.driver.T4C8Oall
+2018-12-10 11:42:19 WARN  Main:10 - 513: oracle.jdbc.driver.T4CTTIfun
+2018-12-10 11:42:19 WARN  Main:10 - 227: oracle.jdbc.driver.T4CTTIfun
+2018-12-10 11:42:19 WARN  Main:10 - 531: oracle.jdbc.driver.T4C8Oall
+2018-12-10 11:42:19 WARN  Main:10 - 195: oracle.jdbc.driver.T4CStatement
+2018-12-10 11:42:19 WARN  Main:10 - 876: oracle.jdbc.driver.T4CStatement
+2018-12-10 11:42:19 WARN  Main:10 - 1175: oracle.jdbc.driver.OracleStatement
+2018-12-10 11:42:19 WARN  Main:10 - 1296: oracle.jdbc.driver.OracleStatement
+2018-12-10 11:42:19 WARN  Main:10 - 1498: oracle.jdbc.driver.OracleStatement
+2018-12-10 11:42:19 WARN  Main:10 - 406: oracle.jdbc.driver.OracleStatementWrapper
+2018-12-10 11:42:19 WARN  Main:10 - 47: com.revature.driver.Main
+2018-12-10 11:42:19 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 11:42:19 WARN  Main:10 - 23: com.revature.driver.Main
+2018-12-10 11:43:09 TRACE Main:44 - select * from login where username = 'paulm' and pswd='pass1'
+2018-12-10 11:43:15 TRACE Main:44 - select * from login where username = 'paulm' and pswd=''
+2018-12-10 11:43:29 TRACE Main:44 - select * from login where username = 'paulm'--' and pswd=''
+2018-12-10 11:44:24 TRACE Main:44 - select * from login where username = 'paulm' and pswd='pass1'
+2018-12-10 11:44:50 TRACE Main:44 - select * from login where username = 'paulm' or 'rorr'' and pswd='pass1'
+2018-12-10 11:44:50 ERROR Main:8 - class java.sql.SQLSyntaxErrorException: ORA-00920: invalid relational operator
+
+2018-12-10 11:44:50 WARN  Main:10 - 447: oracle.jdbc.driver.T4CTTIoer
+2018-12-10 11:44:50 WARN  Main:10 - 396: oracle.jdbc.driver.T4CTTIoer
+2018-12-10 11:44:50 WARN  Main:10 - 951: oracle.jdbc.driver.T4C8Oall
+2018-12-10 11:44:50 WARN  Main:10 - 513: oracle.jdbc.driver.T4CTTIfun
+2018-12-10 11:44:50 WARN  Main:10 - 227: oracle.jdbc.driver.T4CTTIfun
+2018-12-10 11:44:50 WARN  Main:10 - 531: oracle.jdbc.driver.T4C8Oall
+2018-12-10 11:44:50 WARN  Main:10 - 195: oracle.jdbc.driver.T4CStatement
+2018-12-10 11:44:50 WARN  Main:10 - 876: oracle.jdbc.driver.T4CStatement
+2018-12-10 11:44:50 WARN  Main:10 - 1175: oracle.jdbc.driver.OracleStatement
+2018-12-10 11:44:50 WARN  Main:10 - 1296: oracle.jdbc.driver.OracleStatement
+2018-12-10 11:44:50 WARN  Main:10 - 1498: oracle.jdbc.driver.OracleStatement
+2018-12-10 11:44:50 WARN  Main:10 - 406: oracle.jdbc.driver.OracleStatementWrapper
+2018-12-10 11:44:50 WARN  Main:10 - 47: com.revature.driver.Main
+2018-12-10 11:44:50 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 11:44:50 WARN  Main:10 - 23: com.revature.driver.Main
+2018-12-10 11:45:05 TRACE Main:44 - select * from login where username = 'paulm' or 'rorr' and pswd='pass1'
+2018-12-10 11:45:05 ERROR Main:8 - class java.sql.SQLSyntaxErrorException: ORA-00920: invalid relational operator
+
+2018-12-10 11:45:05 WARN  Main:10 - 447: oracle.jdbc.driver.T4CTTIoer
+2018-12-10 11:45:05 WARN  Main:10 - 396: oracle.jdbc.driver.T4CTTIoer
+2018-12-10 11:45:05 WARN  Main:10 - 951: oracle.jdbc.driver.T4C8Oall
+2018-12-10 11:45:05 WARN  Main:10 - 513: oracle.jdbc.driver.T4CTTIfun
+2018-12-10 11:45:05 WARN  Main:10 - 227: oracle.jdbc.driver.T4CTTIfun
+2018-12-10 11:45:05 WARN  Main:10 - 531: oracle.jdbc.driver.T4C8Oall
+2018-12-10 11:45:05 WARN  Main:10 - 195: oracle.jdbc.driver.T4CStatement
+2018-12-10 11:45:05 WARN  Main:10 - 876: oracle.jdbc.driver.T4CStatement
+2018-12-10 11:45:05 WARN  Main:10 - 1175: oracle.jdbc.driver.OracleStatement
+2018-12-10 11:45:05 WARN  Main:10 - 1296: oracle.jdbc.driver.OracleStatement
+2018-12-10 11:45:05 WARN  Main:10 - 1498: oracle.jdbc.driver.OracleStatement
+2018-12-10 11:45:05 WARN  Main:10 - 406: oracle.jdbc.driver.OracleStatementWrapper
+2018-12-10 11:45:05 WARN  Main:10 - 47: com.revature.driver.Main
+2018-12-10 11:45:05 WARN  Main:10 - 37: com.revature.driver.Main
+2018-12-10 11:45:05 WARN  Main:10 - 23: com.revature.driver.Main
+2018-12-10 11:45:24 TRACE Main:44 - select * from login where username = 'paulm' or username='rorr' and pswd='pass1'
+2018-12-10 11:45:56 TRACE Main:44 - select * from login where username = 'paulm' or username='rorr' and pswd='pass1'
+2018-12-10 11:46:16 TRACE Main:44 - select * from login where username = 'pski' and pswd='pass'
+2018-12-10 11:46:24 TRACE Main:44 - select * from login where username = 'pski'--' and pswd=''
+2018-12-10 11:51:50 TRACE Main:45 - select * from login where username = ? and pswd=?
+2018-12-10 11:51:57 TRACE Main:45 - select * from login where username = ? and pswd=?
+2018-12-10 11:52:38 TRACE Main:45 - select * from login where username = ? and pswd=?
+2018-12-10 11:53:24 TRACE Main:68 - select * from login where username = 'rorr' and pswd='pass1'--' and pswd=''
+2018-12-10 13:20:06 TRACE GenreOracle:30 - Attempting to find genre with id = 3
+2018-12-10 13:20:08 TRACE GenreOracle:38 - Found genre: 3 Fiction
+2018-12-10 13:20:08 TRACE GenreOracle:48 - Returning genre: Genre [id=3, genre=Fiction]
