@@ -24,12 +24,12 @@ public class BookAppDAOFactory {
 		default: throw new RuntimeException("Could not determine DAO type");
 		}
 	}
-	/*public BookDAO getBookDAO() {
+	public BookDAO getBookDAO() {
 		switch(TYPE) {
 		case "Oracle": return new BookOracle();
 		default: throw new RuntimeException("Could not determine DAO type");
 		}
-	}*/
+	}
 	public AddressDAO getAddressDAO() {
 		switch(TYPE) {
 		case "Oracle": return new AddressOracle();
