@@ -68,6 +68,7 @@ public class UserFake implements UserDao{
 
 	public void saveUser(User u) {
 		users.add(u);
+		System.out.println("User successfully registered!");
 	}
 
 	public void updateUser(User u) {
