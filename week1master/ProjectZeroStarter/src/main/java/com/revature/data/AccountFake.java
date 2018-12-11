@@ -44,4 +44,19 @@ public class AccountFake implements AccountDao{
 		accounts.remove(a);
 	}
 
+	public boolean withdraw(int amount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean deposit(int amount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean transferFunds(int amount, Account a) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

@@ -11,6 +11,21 @@ public class User {
 	private Address address;
 	private String password;
 	private String username;
+	private boolean admin;
+	private boolean employee;
+	
+	public boolean isAdmin() {
+		return admin;
+	}
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+	public boolean isEmployee() {
+		return employee;
+	}
+	public void setEmployee(boolean employee) {
+		this.employee = employee;
+	}
 	public User() {
 		super();
 	}
@@ -68,7 +83,9 @@ public class User {
 		int result = 1;
 		result = prime * result + ((accounts == null) ? 0 : accounts.hashCode());
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + (admin ? 1231 : 1237);
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + (employee ? 1231 : 1237);
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
@@ -95,10 +112,14 @@ public class User {
 				return false;
 		} else if (!address.equals(other.address))
 			return false;
+		if (admin != other.admin)
+			return false;
 		if (email == null) {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
+			return false;
+		if (employee != other.employee)
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -130,6 +151,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [name=" + name + ", id=" + id + ", email=" + email + ", accounts=" + accounts + ", phone=" + phone
-				+ ", address=" + address + ", password=" + password + ", username=" + username + "]";
+				+ ", address=" + address + ", password=" + password + ", username=" + username + ", admin=" + admin
+				+ ", employee=" + employee + "]";
 	}
 }

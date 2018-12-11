@@ -10,4 +10,7 @@ public interface AccountDao {
 	void saveAccount(Account a);
 	void updateAccount(Account a);
 	void deleteAccount(Account a);
+	boolean withdraw(int amount);
+	boolean deposit(int amount);
+	boolean transferFunds(int amount, Account a);
 }
