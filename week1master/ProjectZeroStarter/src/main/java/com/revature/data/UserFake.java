@@ -95,21 +95,27 @@ public class UserFake implements UserDao{
 		users.remove(u);
 	}
 	public void applyForAccount(String accType, User u) {
+		Account newAccount = new Account();
+		newAccount.setType(accType);
 		if (u.getPendingAccounts() == null) {
+			System.out.println("pending: " + u.getPendingAccounts().size());
 			List<Account> newApplication = new ArrayList<Account>();
-			Account newAccount = new Account();
-			newAccount.setType(accType);
+			u.setPendingAccounts(newApplication);
 		}
+		u.getPendingAccounts().add(newAccount);
+		System.out.println();
 		System.out.println(u.getUsername() + ", you have applied for individual " + accType + " account successfully.");
 	}
 	public void applyForJointAccount(String accType, User u, User otherU) {
 		List<Account> uPending = u.getPendingAccounts();
 		if (uPending == null) {
 			uPending = new ArrayList<Account>();
+			u.setPendingAccounts(uPending);
 		}
 		List<Account> otherUPending = otherU.getPendingAccounts();
 		if (otherUPending == null) {
 			otherUPending = new ArrayList<Account>();
+			otherU.setPendingAccounts(otherUPending);
 		}
 		Account newAcc = new Account();
 		newAcc.setId(ad.getAccounts().size());

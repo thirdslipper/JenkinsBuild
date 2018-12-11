@@ -143,7 +143,7 @@ public class UserInterface {
 	//
 	public void userLoggedInUI() {
 		System.out.println("Logged in");
-		System.out.println(loggedInUser.getAccounts().size());
+//		System.out.println(loggedInUser.getAccounts().size());
 		//check amount of accounts
 		// potential null pointer
 				if (loggedInUser.getAccounts().size() == 0) {
@@ -215,6 +215,35 @@ public class UserInterface {
 			}
 		} else {
 			user.applyForAccount(accType, loggedInUser);
+		}
+	}
+	// to do ; admin/employee UI just an add on to application
+	public void employeeUI() {
+		//pull customer personal, account info, acc balance, approve/deny open accounts
+	}
+	// to do ; admin UI view/edit all acc, approve/deny acc, withdraw/dep/tran from all acc, cancel acc
+	public void adminUI() {
+		
+	}
+	
+	//withdraw, deposit, transfer, etc
+	public void accountAction() {
+		String input = "";
+		System.out.println("Welcome to your account, " + loggedInUser.getUsername()
+			+ "\nWhat would you like to do?"
+			+ "\n\t1. Withdraw"
+			+ "\n\t2. Deposit"
+			+ "\n\t3. Transfer Funds"
+			+ "\n\t4. Exit");
+		input = kb.getString().toLowerCase().trim();
+		if (kb.equals("withdraw")) {
+			
+		} else if (input.equals("deposit")) {
+			
+		} else if (input.startsWith("transfer")) {
+			
+		} else if (input.equals("exit")) {
+			
 		}
 	}
 }
