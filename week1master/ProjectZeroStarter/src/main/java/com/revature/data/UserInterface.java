@@ -21,6 +21,9 @@ public class UserInterface {
 		//call welcome and other methods, or choose not to
 		kb = Input.getInput();
 		user = new UserFake();
+		
+		user.displayUsers();
+		
 		welcome();
 	}
 	//null accounts in user, empty values, write a method to check for valid input?

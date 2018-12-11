@@ -17,34 +17,43 @@ public class UserFake implements UserDao{
 		u.getAccounts().add(ad.getAccount(2));
 		u.setUsername("bob");
 		u.setPassword("marley");
-		
+		users.add(u);
+
+		u = new User();
 		u.setId(2);
 		u.setAccounts(new ArrayList<Account>());
 		u.getAccounts().add(ad.getAccount(3));
 		u.getAccounts().add(ad.getAccount(4));
 		u.setUsername("derrek");
 		u.setPassword("chris");
-		
+		users.add(u);
+
+		u = new User();
 		u.setId(3);
 		u.setAccounts(new ArrayList<Account>());
 		u.getAccounts().add(ad.getAccount(5));
 		u.getAccounts().add(ad.getAccount(6));
 		u.setUsername("david");
 		u.setPassword("david");
-		
+		users.add(u);
+
+		u = new User();
 		u.setId(4);
 		u.setAccounts(new ArrayList<Account>());
 		u.getAccounts().add(ad.getAccount(7));
 		u.getAccounts().add(ad.getAccount(8));
 		u.setUsername("steven");
 		u.setPassword("mateusz");
-		
+		users.add(u);
+
+		u = new User();
 		u.setId(5);
 		u.setAccounts(new ArrayList<Account>());
 		u.getAccounts().add(ad.getAccount(9));
 		u.getAccounts().add(ad.getAccount(10));
 		u.setUsername("Tyler");
 		u.setPassword("warren");
+		users.add(u);
 	}
 	public User login(String username, String password) {
 		for(User u : users) {
@@ -78,5 +87,9 @@ public class UserFake implements UserDao{
 	public void deleteUser(User u) {
 		users.remove(u);
 	}
-
+	public void displayUsers() {
+		for (User u : users) {
+			System.out.println(u.getUsername());
+		}
+	}
 }
