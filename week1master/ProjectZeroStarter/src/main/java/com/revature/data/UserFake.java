@@ -98,9 +98,9 @@ public class UserFake implements UserDao{
 		Account newAccount = new Account();
 		newAccount.setType(accType);
 		if (u.getPendingAccounts() == null) {
-			System.out.println("pending: " + u.getPendingAccounts().size());
 			List<Account> newApplication = new ArrayList<Account>();
 			u.setPendingAccounts(newApplication);
+//			System.out.println("pending: " + u.getPendingAccounts().size());
 		}
 		u.getPendingAccounts().add(newAccount);
 		System.out.println();

@@ -141,11 +141,11 @@ public class UserInterface {
 	//
 	public void userLoggedInUI() {
 		System.out.println("Logged in");
-//		System.out.println(loggedInUser.getAccounts().size());
+		//		System.out.println(loggedInUser.getAccounts().size());
 		//check amount of accounts
 		// potential null pointer
-				if (loggedInUser.getAccounts().size() == 0) {
-//		if (loggedInUser.getAccounts() == null) {
+		//				if (loggedInUser.getAccounts().size() == 0) {
+		if (loggedInUser.getAccounts() == null || loggedInUser.getAccounts().size() == 0) {
 			String input = "";
 			boolean done = false;
 			while (!done) {
@@ -174,6 +174,30 @@ public class UserInterface {
 					System.out.println("Invalid entry");
 				}
 			}
+		} else { // does have an account, change tostring to easier read, 
+			System.out.println("Which account would you like to manage?"
+					+ "\n" + loggedInUser.getAccounts());
+			String accId = "";
+			Boolean foundAcc = false;
+			Account accToManage = null;
+			while (!foundAcc) {
+				try {
+					accId = kb.getString();
+					for (Account acc : loggedInUser.getAccounts()) {
+						if (acc.getId() == Integer.parseInt(accId)) {
+							foundAcc = true;
+							accToManage = acc;
+						} else {
+							System.out.println("Account ID : " + accId + " not found,"
+									+ "please try again.");
+						}
+					}
+				}catch (NumberFormatException e) {
+					System.out.println("input error");
+				}
+			} 
+			System.out.println("Managing : " + accId);
+			accountAction(accToManage);
 		}
 	}
 	public void applicationInput(String type) {
@@ -202,7 +226,7 @@ public class UserInterface {
 				System.out.println("Who are you going to open your account with? or exit");
 				otherUserName = kb.getString();
 				otherUser = user.getUser(otherUserName);
-				
+
 				if (otherUser != null) {
 					user.applyForJointAccount(accType, loggedInUser, otherUser);
 				} else if (otherUserName.equals("exit")) {
@@ -221,28 +245,27 @@ public class UserInterface {
 	}
 	// to do ; admin UI view/edit all acc, approve/deny acc, withdraw/dep/tran from all acc, cancel acc
 	public void adminUI() {
-		
+
 	}
-	
+
 	//withdraw, deposit, transfer, etc
-	public void accountAction() {
+	public void accountAction(Account acc) {
 		String input = "";
 		System.out.println("Welcome to your account, " + loggedInUser.getUsername()
-			+ "\nWhat would you like to do?"
-			+ "\n\t1. Withdraw"
-			+ "\n\t2. Deposit"
-			+ "\n\t3. Transfer Funds"
-			+ "\n\t4. Exit");
+		+ "\nWhat would you like to do?"
+		+ "\n\t1. Withdraw"
+		+ "\n\t2. Deposit"
+		+ "\n\t3. Transfer Funds"
+		+ "\n\t4. Exit");
 		input = kb.getString().toLowerCase().trim();
 		if (kb.equals("withdraw")) {
-			
+
 		} else if (input.equals("deposit")) {
-			
+
 		} else if (input.startsWith("transfer")) {
-			
+
 		} else if (input.equals("exit")) {
-			
+
 		}
 	}
 }
->>>>>>> c83b52a49dcfd41381faea71799ce226f824abe5
