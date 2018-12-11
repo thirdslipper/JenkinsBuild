@@ -163,9 +163,23 @@ select id, username, pswd, first_name, last_name from login where first_name='Pa
 select login.id, username, pswd, first_name, last_name, address_id from customer
     join login on login.id=customer.id;
 -- get addresses
-select c.id, username, pswd, first_name, last_name, a.id, lineone, linetwo, city, state, zip
-    from (select login.id, username, pswd, first_name, last_name, address_id from customer
-    join login on login.id=customer.id) c join address a on a.id = c.address_id;
+select
+    c.id, username, pswd, first_name, last_name, a.id, lineone, linetwo, city, state, zip
+from
+    (
+        select
+            login.id, username, pswd, first_name, last_name, address_id
+        from
+            customer
+            join
+            login
+            on
+                login.id=customer.id
+    ) c 
+    join 
+    address a 
+    on
+        a.id = c.address_id;
 
 create or replace view customerdata as (select c.id, username, pswd, first_name, last_name, a.id as "a_id", lineone, linetwo, city, state, zip
     from (select login.id, username, pswd, first_name, last_name, address_id from customer
@@ -192,3 +206,83 @@ select title, first_name, state, (1+rate)*price from (select * from book, (selec
     Author      | Book Title    | Price | Paul's Price w/ Tax
     J.K. Rowling| Harry...      | 
 */
+-- David Donnelly
+select firstname, lastname, title, price from
+   (book bk join (select * from book_author a join author b on b.id=a.author_id where b.firstname='J.K.')
+   ba on bk.id = ba.book_id);
+--Mateusz Wiater
+select author_name, title, price, (1+rate)*price AS PRICE_WITH_TAX from
+   (select * from book, (select first_name, taxrate.state, rate from customerdata join taxrate on customerdata.state=taxrate.state where first_name='Paul')),
+   (select book_id, author_id, concat(concat(firstname,' '),lastname) as author_name from author, book_author where author.id = book_author.author_id and firstname='J.K.')
+   where book_id=id;
+-- ME (blatantly copying Mateusz' code)
+select author_name, title, price, (1+rate)*price AS PRICE_WITH_TAX from
+   (select * from book, (select first_name, taxrate.state, rate from customerdata join taxrate on customerdata.state=taxrate.state where first_name='Paul')),
+   (select book_id, author_id, firstname||' '||lastname as author_name from author, book_author where author.id = book_author.author_id and firstname='J.K.')
+   where book_id=id;
+
+/* Seth Majeski */
+select a.firstname, a.lastname, b.title, b.price,round(calculatetax(b.id,1),2)
+    from (author a join book_author ba on a.id = ba.author_id)
+    join book b on ba.book_id = b.id where a.firstname = 'J.K.';
+/* Seth Two */
+select concat(concat(a.firstname, ' '),a.lastname)as "AUTHOR", b.title as "Book Title",
+    b.price,round(calculatetax(b.id,1),2)as "PAUL'S TOTAL" 
+    from (author a join book_author ba
+   on a.id = ba.author_id)join book b
+   on ba.book_id = b.id where a.firstname = 'J.K.';
+/* Jamarius Epperson */
+select concat(a.firstname, a.lastname) as "author", b.title, b.price,
+    round(calculatetax(b.id,1),2) as "Paul's Total" from 
+    (author a join book_author ba on a.id = ba.author_id)
+    join book b on ba.book_id = b.id where a.firstname = 'J.K.';
+
+/* Me */
+select firstname||' '||lastname as name,
+  book.price, price * (1+(select rate from taxrate where state = 'WV'))
+  as "WV Total" from 
+  (select * from author a join book_author b on a.id=b.author_id)
+  join book on book.id = book_id;
+-- Thomas 
+select a.firstname || ' ' ||a.lastname as "Author",
+      b.title,
+      b.price,
+      b.price * (1+ (select rate from taxrate where state = 'WV')) as "WV Total"
+ from author a
+ join book_author ba on a.id = ba.author_id
+ join book b on ba.book_id = b.id;
+
+
+-- purchases
+--make the purchase in the purchase table
+insert into purchase(customer_id, status) values (
+    (select id from login where username='paulm'), 'OPEN');
+insert into purchase(customer_id, status) values (
+    (select id from login where username='rorr'), 'OPEN');
+
+-- Enable console output for plsql
+set serveroutput on;
+
+declare
+    curs sys_refcursor;
+    purch number;
+    book number;
+    total number;
+    quantity number;
+begin
+    add_book_to_cart(2,1,total,curs);
+    dbms_output.put_line(total);
+    loop
+        fetch curs into purch, book, quantity;
+        exit when curs%NOTFOUND;
+        dbms_output.put_line('['||purch||' | '||book||' | '||quantity||']');
+    end loop;
+end;
+/
+
+exec empty_cart(2);
+
+update book set 
+    cover='https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg/220px-Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg'
+    where id=(select id from book where title like 'Harry Potter and the S%');
+commit;
