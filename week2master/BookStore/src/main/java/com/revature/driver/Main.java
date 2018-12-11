@@ -33,11 +33,6 @@ public class Main {
 	
 	private static void dao() {
 		GenreDAO gd = bf.getGenreDAO();
-<<<<<<< HEAD
-//		System.out.println(gd.getGenre(3));
-
-		System.out.println(gd.getGenres());
-=======
 		//System.out.println(gd.getGenre(3));
 		//System.out.println(gd.getGenres());
 		//Book b = new Book();
@@ -58,7 +53,6 @@ public class Main {
 		int i = gd.addGenre(g);
 		System.out.println(gd.getGenre(i));*/
 		System.out.println(bf.getEmployeeDAO().getEmployees());
->>>>>>> aa32f9a53b22e7e87c338690ef948a3038a2f6b9
 	}
 
 	private static void login() {

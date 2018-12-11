@@ -4,10 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-<<<<<<< HEAD
-import java.sql.Statement;
-=======
->>>>>>> aa32f9a53b22e7e87c338690ef948a3038a2f6b9
 import java.util.HashSet;
 import java.util.Set;
 
@@ -113,7 +109,7 @@ public class GenreOracle implements GenreDAO{
 	}
 
 	@Override
-<<<<<<< HEAD
+/*
 	public Set<Genre> getGenres() {
 		log.trace("Attempting to get the collection genres");
 		Set<Genre> genreSet = new HashSet<Genre>();
@@ -160,7 +156,7 @@ public class GenreOracle implements GenreDAO{
 		log.trace("Returning genre: "+g);
 		return genreSet;
 	}
-=======
+*/
     public Set<Genre> getGenres() {
         log.trace("Attempting to find all genres");
         Set<Genre> genreSet = new HashSet<Genre>();
@@ -206,7 +202,6 @@ public class GenreOracle implements GenreDAO{
         log.trace("Returning genre: "+genreSet);
         return genreSet;
     }
->>>>>>> aa32f9a53b22e7e87c338690ef948a3038a2f6b9
 
 	@Override
 	public void updateGenre(Genre g) {
