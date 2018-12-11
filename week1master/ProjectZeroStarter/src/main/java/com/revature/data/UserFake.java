@@ -87,9 +87,34 @@ public class UserFake implements UserDao{
 	public void deleteUser(User u) {
 		users.remove(u);
 	}
-	public void displayUsers() {
+	public void applyForAccount(String accType, User u) {
+		if (u.getPendingAccounts() == null) {
+			List<Account> newApplication = new ArrayList<Account>();
+			Account newAccount = new Account();
+			newAccount.setType(accType);
+		}
+	}
+	public void applyForJointAccount(String accType, User u, User otherU) {
+		List<Account> uPending = u.getPendingAccounts();
+		if (uPending == null) {
+			uPending = new ArrayList<Account>();
+		}
+		List<Account> otherUPending = otherU.getPendingAccounts();
+		if (otherUPending == null) {
+			otherUPending = new ArrayList<Account>();
+		}
+		Account newAcc = new Account();
+		newAcc.setId(ad.getAccounts().size());
+		newAcc.setBalance(0.0);
+		newAcc.setJoint(true);
+		newAcc.setType(accType);
+		
+		uPending.add(newAcc);
+		otherUPending.add(newAcc);
+	}
+/*	public void displayUsers() {
 		for (User u : users) {
 			System.out.println(u.getUsername());
 		}
-	}
+	}*/
 }

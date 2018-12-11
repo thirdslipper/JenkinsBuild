@@ -7,6 +7,7 @@ public class User {
 	private Integer id;
 	private String email;
 	private List<Account> accounts;
+	private List<Account> pendingAccounts;
 	private String phone;
 	private Address address;
 	private String password;
@@ -53,6 +54,12 @@ public class User {
 	public void setAccounts(List<Account> accounts) {
 		this.accounts = accounts;
 	}
+	public List<Account> getPendingAccounts() {
+		return pendingAccounts;
+	}
+	public void setPendingAccounts(List<Account> pendingAccounts) {
+		this.pendingAccounts = pendingAccounts;
+	}
 	public String getPhone() {
 		return phone;
 	}
@@ -89,6 +96,7 @@ public class User {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((pendingAccounts == null) ? 0 : pendingAccounts.hashCode());
 		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
@@ -136,6 +144,11 @@ public class User {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
+		if (pendingAccounts == null) {
+			if (other.pendingAccounts != null)
+				return false;
+		} else if (!pendingAccounts.equals(other.pendingAccounts))
+			return false;
 		if (phone == null) {
 			if (other.phone != null)
 				return false;
@@ -150,8 +163,8 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", id=" + id + ", email=" + email + ", accounts=" + accounts + ", phone=" + phone
-				+ ", address=" + address + ", password=" + password + ", username=" + username + ", admin=" + admin
-				+ ", employee=" + employee + "]";
+		return "User [name=" + name + ", id=" + id + ", email=" + email + ", accounts=" + accounts
+				+ ", pendingAccounts=" + pendingAccounts + ", phone=" + phone + ", address=" + address + ", password="
+				+ password + ", username=" + username + ", admin=" + admin + ", employee=" + employee + "]";
 	}
 }
