@@ -54,6 +54,13 @@ public class UserFake implements UserDao{
 		u.setUsername("Tyler");
 		u.setPassword("warren");
 		users.add(u);
+		
+		u = new User();
+		u.setId(6);
+		u.setAccounts(new ArrayList<Account>());
+		u.setUsername("notbob");
+		u.setPassword("marley");
+		users.add(u);
 	}
 	public User login(String username, String password) {
 		for(User u : users) {
@@ -87,9 +94,42 @@ public class UserFake implements UserDao{
 	public void deleteUser(User u) {
 		users.remove(u);
 	}
-	public void displayUsers() {
+	public void applyForAccount(String accType, User u) {
+		Account newAccount = new Account();
+		newAccount.setType(accType);
+		if (u.getPendingAccounts() == null) {
+			System.out.println("pending: " + u.getPendingAccounts().size());
+			List<Account> newApplication = new ArrayList<Account>();
+			u.setPendingAccounts(newApplication);
+		}
+		u.getPendingAccounts().add(newAccount);
+		System.out.println();
+		System.out.println(u.getUsername() + ", you have applied for individual " + accType + " account successfully.");
+	}
+	public void applyForJointAccount(String accType, User u, User otherU) {
+		List<Account> uPending = u.getPendingAccounts();
+		if (uPending == null) {
+			uPending = new ArrayList<Account>();
+			u.setPendingAccounts(uPending);
+		}
+		List<Account> otherUPending = otherU.getPendingAccounts();
+		if (otherUPending == null) {
+			otherUPending = new ArrayList<Account>();
+			otherU.setPendingAccounts(otherUPending);
+		}
+		Account newAcc = new Account();
+		newAcc.setId(ad.getAccounts().size());
+		newAcc.setBalance(0.0);
+		newAcc.setJoint(true);
+		newAcc.setType(accType);
+		
+		uPending.add(newAcc);
+		otherUPending.add(newAcc);	
+		System.out.println("Applied for joint " + accType + " account with " + otherU.getUsername() + " successfully.");
+	}	
+/*	public void displayUsers() {
 		for (User u : users) {
 			System.out.println(u.getUsername());
 		}
-	}
+	}*/
 }
