@@ -54,6 +54,13 @@ public class UserFake implements UserDao{
 		u.setUsername("Tyler");
 		u.setPassword("warren");
 		users.add(u);
+		
+		u = new User();
+		u.setId(6);
+		u.setAccounts(new ArrayList<Account>());
+		u.setUsername("notbob");
+		u.setPassword("marley");
+		users.add(u);
 	}
 	public User login(String username, String password) {
 		for(User u : users) {
@@ -93,6 +100,7 @@ public class UserFake implements UserDao{
 			Account newAccount = new Account();
 			newAccount.setType(accType);
 		}
+		System.out.println(u.getUsername() + ", you have applied for individual " + accType + " account successfully.");
 	}
 	public void applyForJointAccount(String accType, User u, User otherU) {
 		List<Account> uPending = u.getPendingAccounts();
@@ -110,8 +118,9 @@ public class UserFake implements UserDao{
 		newAcc.setType(accType);
 		
 		uPending.add(newAcc);
-		otherUPending.add(newAcc);
-	}
+		otherUPending.add(newAcc);	
+		System.out.println("Applied for joint " + accType + " account with " + otherU.getUsername() + " successfully.");
+	}	
 /*	public void displayUsers() {
 		for (User u : users) {
 			System.out.println(u.getUsername());

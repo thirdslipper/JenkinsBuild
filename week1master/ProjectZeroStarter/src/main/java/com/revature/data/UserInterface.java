@@ -142,9 +142,12 @@ public class UserInterface {
 	//non admin, employee, provide user functionality to apply to open account/joint, just have 3 different UI
 	//
 	public void userLoggedInUI() {
+		System.out.println("Logged in");
+		System.out.println(loggedInUser.getAccounts().size());
 		//check amount of accounts
-		//		if (loggedInUser.getAccounts().size() == 0) { potential null pointer
-		if (loggedInUser.getAccounts() == null) {
+		// potential null pointer
+				if (loggedInUser.getAccounts().size() == 0) {
+//		if (loggedInUser.getAccounts() == null) {
 			String input = "";
 			boolean done = false;
 			while (!done) {
@@ -177,10 +180,21 @@ public class UserInterface {
 	}
 	public void applicationInput(String type) {
 		String accType = "";
-		while (!accType.equals("checking") && !accType.equals("savings)") ) {
+		while (!accType.equals("checking") && !accType.equals("savings") ) {
 			System.out.println("1. Checking or"
 					+ "\n2. Savings?");
 			accType = kb.getString().toLowerCase().trim();
+			try {
+				if (Integer.parseInt(accType) == 1) {
+					accType = "checking";
+				} else if(Integer.parseInt(accType) == 2) {
+					accType = "savings";
+				} else {
+					System.out.println("Wrong input.");
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("dw about it");
+			}
 		}
 		if (type.equals("joint")) {
 			User otherUser = null;
@@ -195,6 +209,8 @@ public class UserInterface {
 					user.applyForJointAccount(accType, loggedInUser, otherUser);
 				} else if (otherUserName.equals("exit")) {
 					goBack = false;
+				} else {
+					System.out.println("User not found.");
 				}
 			}
 		} else {
