@@ -3,6 +3,7 @@ package com.revature.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,5 +37,31 @@ public class HelloServlet extends HttpServlet {
 						+ "<br><a href=\"hello\">hello</a></body></html>");
 		
 	}
-	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// Calls our do methods for us.
+		log.trace("HelloServlet service()");
+		super.service(req, resp);
+	}
+	@Override
+	public void destroy() {
+		// Closes servlet resources and preps for end of application.
+
+		log.trace("HelloServlet destroy()");
+		super.destroy();
+	}
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// Do not override this method unless you call super.init(config);
+
+		log.trace("HelloServlet init(config)");
+		super.init(config);
+	}
+	@Override
+	public void init() throws ServletException {
+		// This method exists so that you CAN override init
+
+		log.trace("HelloServlet init()");
+		super.init();
+	}
 }
