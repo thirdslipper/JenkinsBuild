@@ -13,7 +13,7 @@ import com.revature.beans.User;
 import com.revature.data.UserDAO;
 import com.revature.data.UserOracle;
 
-public class LoginDelegate extends RequestHelper{
+public class LoginDelegate implements RequestDelegate{
 	private Logger log = Logger.getLogger(LoginDelegate.class);
 	private UserDAO ud = new UserOracle();
 	@Override

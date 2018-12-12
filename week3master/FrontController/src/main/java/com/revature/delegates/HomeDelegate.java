@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.revature.beans.User;
 
-public class HomeDelegate extends RequestHelper {
+public class HomeDelegate implements RequestDelegate {
 
 	@Override
 	public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

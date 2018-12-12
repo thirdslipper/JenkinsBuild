@@ -6,18 +6,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RequestHelper {
-	private HomeDelegate hd;
-	private LoginDelegate ld;
+public class RequestHelper implements RequestDelegate{
+	private HomeDelegate hd=new HomeDelegate();
+	private LoginDelegate ld=new LoginDelegate();
 	
 	public void process(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		if(hd==null) {
-			hd=new HomeDelegate();
-		}
-		if(ld==null) {
-			ld=new LoginDelegate();
-		}
+		
 		// /FrontController/home/hi
 		String switchString = req.getRequestURI().substring(req.getContextPath().length()+1);
 		// home/hi
