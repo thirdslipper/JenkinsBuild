@@ -31,8 +31,8 @@ public class AuthorServiceJDBC implements AuthorService {
 	}
 
 	@Override
-	public void addAuthor(Author a) {
-		ad.addAuthor(a);
+	public int addAuthor(Author a) {
+		return ad.addAuthor(a);
 	}
 
 }
