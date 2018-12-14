@@ -57,5 +57,26 @@ function add(first, second) {
     }
 }
 
+function add(first,second) {
+    if(arguments.length===1) {
+        var total = first;
+        function innerAdd(num) {
+            if(num!==undefined){
+                total+=num;
+                return innerAdd;
+            } else {
+                return total;
+            }
+        }
+        return innerAdd;
+    } else {
+        let sum =0;
+        for(let i=0; i<arguments.length; i++) {
+            sum+=arguments[i];
+        }
+        return sum;
+    }
+}
+
 // I want this to return 18
-console.log(add(5)(6)(4)(3)());
+console.log(add(5)(6)(4)(3)(6)());
