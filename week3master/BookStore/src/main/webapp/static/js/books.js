@@ -31,7 +31,8 @@ function addBookToTable(book) {
     td = document.createElement("td");
     tr.appendChild(td);
     let cover = document.createElement("img");
-    cover.src = book.cover;
+    if(book.cover!=null)
+    	cover.src = book.cover;
     cover.alt = book.title;
     cover.width=90;
     td.appendChild(cover);
@@ -67,6 +68,7 @@ function addBookToTable(book) {
     btn.innerHTML="X";
     btn.className="btn btn-danger emp-btn";
     btn.id="d_b_"+book.id;
+    console.log("adding the button");
     btn.addEventListener("click",deleteBook);
     btn.disabled=employee?false:true;
 
@@ -99,5 +101,17 @@ function editBook(){
 	window.location.href="editBook/"+id;
 }
 function deleteBook(){
-	
+	console.log("hello from delete");
+	var btn = event.target;
+	var id = btn.id.substring("d_b_".length);
+	console.log(id);
+	var xhttp= new XMLHttpRequest();
+	xhttp.onreadystatechange=deleteBooks;
+	xhttp.open("DELETE","books/"+id);
+	xhttp.send(JSON.stringify(books.find(book=>book.id==id)));
+	function deleteBooks(){
+		if(xhttp.readyState===4&&xhttp.status===204){
+			window.location.reload(true);
+		}
+	}
 }

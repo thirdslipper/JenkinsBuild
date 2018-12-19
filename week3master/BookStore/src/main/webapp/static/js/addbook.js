@@ -4,38 +4,9 @@ book.genres=[];
 var baseURL="/BookStore/";
 
 window.onload=function(){
-	//retrieve the book
-	// Promise
-	var getBook = new Promise(function(resolve, reject) {
-		let url = window.location.href;
-		let id = url.substring(url.lastIndexOf("/")+1);
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange=someCallbackFunction;
-		xhttp.open("GET",baseURL+"books/"+id);
-		xhttp.send();
-		
-		function someCallbackFunction(){
-			if(xhttp.readyState===4 && xhttp.status===200){
-				book = JSON.parse(xhttp.responseText);
-				populateForm();
-				console.log("xhttp success complete");
-				resolve(book);
-			} else{
-				if(xhttp.status>=400){
-					reject(Error("Oh no"));
-				}
-			}
-		}
-	});
 	
-	getBook.then(function(result){
-		// resolve callback
-		getAuthors();
-		getGenres();
-	}, function(err){
-		// reject callback
-		console.log(err);
-	});
+	getAuthors();
+	getGenres();
 	
 	//event listeners
 	document.getElementById("b_authors").onchange=addAuthor;
@@ -214,7 +185,7 @@ function submit(){
 	console.log("submit");
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange=moveToBooks;
-	xhttp.open("PUT", baseURL+"books/"+book.id);
+	xhttp.open("POST", baseURL+"books/");
 	xhttp.send(JSON.stringify(book));
 
 	function moveToBooks() {
