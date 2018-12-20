@@ -25,4 +25,12 @@ export class AppComponent implements OnInit {
     );
     
   }
+  searchNext(){
+    this.searchId++;
+    this.search();
+  }
+  searchLast(){
+    this.searchId--;
+    this.search();
+  }
 }

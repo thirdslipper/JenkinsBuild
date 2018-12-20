@@ -9,13 +9,15 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { StatsComponent } from './stats/stats.component';
 import { SpritesComponent } from './sprites/sprites.component';
 import { PokemonService } from './pokemon.service';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonComponent,
     StatsComponent,
-    SpritesComponent
+    SpritesComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

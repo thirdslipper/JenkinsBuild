@@ -1,5 +1,7 @@
-<label>Enter Pokemon Id:</label>
+<div (keydown.ArrowRight)="searchNext()" (keydown.ArrowLeft)="searchLast()">
+  <label>Enter Pokemon Id:</label>
 <input type="number" [(ngModel)]="searchId" (keydown.enter)="search()"/>
 <app-pokemon></app-pokemon>
 
 <app-pokemon [pokemon]="pokemon"></app-pokemon>
+</div>

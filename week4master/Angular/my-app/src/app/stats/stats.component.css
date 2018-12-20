@@ -1,0 +1,9 @@
+tr:nth-child(even) {
+    background-color: blueviolet;
+}
+tr:nth-child(odd) {
+    background-color: green;
+}
+div > table > tbody > .header {
+    background-color: blue;
+}
