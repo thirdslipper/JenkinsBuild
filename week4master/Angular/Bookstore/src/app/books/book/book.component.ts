@@ -3,6 +3,7 @@ import { BookService } from '../shared/book.service';
 import { AuthorService } from '../shared/author.service';
 import { GenreService } from '../shared/genre.service';
 import { Book } from '../shared/book';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -15,10 +16,16 @@ export class BookComponent implements OnInit {
   constructor(
     private bookService: BookService,
     private authorService: AuthorService,
-    private genreService: GenreService
+    private genreService: GenreService,
+    private router: Router,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    if(id) {
+      this.bookService.getBook(id).subscribe(book=>this.openBook=book);
+    }
 
   }
   isCustomer(): boolean {

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './books/book/book.component';
@@ -15,6 +16,7 @@ import { AuthorService } from './books/shared/author.service';
 import { GenreService } from './books/shared/genre.service';
 import { BookService } from './books/shared/book.service';
 import { UrlService } from './shared/url.service';
+import { RoutingModule } from './routing/routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { UrlService } from './shared/url.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RoutingModule
   ],
   providers: [AuthorService, GenreService, BookService, UrlService],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
-<p>
-  book-shelf works!
-</p>
+<div class="container">
+  Search: <input class="well" [(ngModel)]="searchBar" type="text">
+</div>
+<app-book *ngFor="let b of books" [openBook]="b"></app-book>
