@@ -1,3 +1,25 @@
-<p>
-  author works!
-</p>
+<div class="container border">
+  <div *ngIf="isEmployee(); else customer">
+    <div class="row">
+      <span class="col">First: </span>
+      <input class="col" type="text" [(ngModel)]="openAuthor.first">
+    </div>
+    <div class="row">
+      <span class="col">Last: </span>
+      <input class="col" type="text" [(ngModel)]="openAuthor.last">
+    </div>
+    <div class="row">
+      <span class="col">Blurb: </span>
+      <textarea class="col" [(ngModel)]="openAuthor.about"></textarea>
+    </div>
+    <button class="row btn btn-primary" (click)="updateAuthor()">Submit</button>
+  </div>
+</div>
+
+<ng-template #customer>
+  <div>
+    <span class="font-weight-bold">Name: </span>{{openAuthor.first + " " + openAuthor.last }}
+    <br>
+    <span class="font-weight-bold">About the Author: </span>{{ openAuthor.about }}
+  </div>
+</ng-template>

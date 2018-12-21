@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/user/user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,14 +9,14 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
   title = 'My Bookstore';
-  constructor(public route: Router) { }
+  constructor(public route: Router, private userService: UserService) { }
 
   ngOnInit() {  }
   isEmployee(): boolean {
-    return true;
+    return this.userService.isEmployee();
   }
   isCustomer(): boolean {
-    return true;
+    return this.userService.isCustomer();
   }
 
 }

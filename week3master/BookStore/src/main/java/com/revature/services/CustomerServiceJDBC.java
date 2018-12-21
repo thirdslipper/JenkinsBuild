@@ -23,11 +23,11 @@ public class CustomerServiceJDBC implements CustomerService {
 	public Customer getCustomer(String username, String password) {
 		Customer cust = new Customer(0, username, password);
 		cust = (Customer) ud.getUser(cust);
+		cust = cd.getCustomer(cust);
 		if(cust.getId()==0) {
 			log.warn("No customer found");
 			return null;
 		}
-		cust = cd.getCustomer(cust);
 		cust.setAddress(addrdao.getAddress(cust.getAddress().getId()));
 		cust.setReadingList(bs.getBooksForReadingList(cust));
 		return cust;

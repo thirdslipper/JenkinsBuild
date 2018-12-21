@@ -17,6 +17,8 @@ import { GenreService } from './books/shared/genre.service';
 import { BookService } from './books/shared/book.service';
 import { UrlService } from './shared/url.service';
 import { RoutingModule } from './routing/routing/routing.module';
+import { BookFilterPipe } from './book-filter.pipe';
+import { UserService } from './shared/user/user.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { RoutingModule } from './routing/routing/routing.module';
     EditBookComponent,
     AuthorListComponent,
     LoginComponent,
-    NavBarComponent
+    NavBarComponent,
+    BookFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,13 @@ import { RoutingModule } from './routing/routing/routing.module';
     FormsModule,
     RoutingModule
   ],
-  providers: [AuthorService, GenreService, BookService, UrlService],
+  providers: [
+    AuthorService,
+    GenreService,
+    BookService,
+    UrlService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
