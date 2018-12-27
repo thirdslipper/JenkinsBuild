@@ -5,6 +5,9 @@ import { AuthorListComponent } from 'src/app/books/author-list/author-list.compo
 import { EditBookComponent } from 'src/app/books/edit-book/edit-book.component';
 import { BookComponent } from 'src/app/books/book/book.component';
 import { GenreComponent } from 'src/app/books/genre/genre.component';
+import { HomeComponent } from 'src/app/home/home.component';
+import { PurchaseComponent } from 'src/app/purchase/purchase/purchase.component';
+import { CartComponent } from 'src/app/purchase/cart/cart.component';
 
 const routes=[
   {
@@ -14,7 +17,7 @@ const routes=[
   },
   {
     path: 'home',
-    component: BookShelfComponent
+    component: HomeComponent
   },
   {
     path: 'books/edit/:id',
@@ -31,6 +34,14 @@ const routes=[
   {
     path: 'books',
     component: BookShelfComponent
+  },
+  {
+    path: 'purch/:id',
+    component: PurchaseComponent
+  },
+  {
+    path: 'purch',
+    component: CartComponent
   },
   {
     path: 'authors',

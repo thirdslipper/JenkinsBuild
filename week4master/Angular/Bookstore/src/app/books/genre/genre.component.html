@@ -1,3 +1,9 @@
-<p>
-  genre works!
-</p>
+<div class="container">
+<ul>
+  <li *ngFor="let g of genres">{{g.id+': '+g.genre}}</li>
+</ul>
+
+<input [(ngModel)]="genre.genre"><button class="btn btn-primary" (click)="submit()">Submit</button>
+
+
+</div>

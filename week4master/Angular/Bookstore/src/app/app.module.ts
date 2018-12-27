@@ -19,6 +19,9 @@ import { UrlService } from './shared/url.service';
 import { RoutingModule } from './routing/routing/routing.module';
 import { BookFilterPipe } from './book-filter.pipe';
 import { UserService } from './shared/user/user.service';
+import { HomeComponent } from './home/home.component';
+import { CartComponent } from './purchase/cart/cart.component';
+import { PurchaseComponent } from './purchase/purchase/purchase.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { UserService } from './shared/user/user.service';
     AuthorListComponent,
     LoginComponent,
     NavBarComponent,
-    BookFilterPipe
+    BookFilterPipe,
+    HomeComponent,
+    CartComponent,
+    PurchaseComponent
   ],
   imports: [
     BrowserModule,
