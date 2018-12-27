@@ -15,7 +15,10 @@ export class PurchaseService {
   constructor(
     private http: HttpClient,
     private urlService: UrlService
-  ) { }
+  ) { 
+    console.log("Purchase Service created");
+    console.log(this);
+  }
 
   getPurchases(): Observable<Purchase[]> {
     return this.http.get(this.appUrl, { withCredentials: true }).pipe(

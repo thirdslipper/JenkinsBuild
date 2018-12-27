@@ -5,6 +5,7 @@ import { GenreService } from '../shared/genre.service';
 import { Book } from '../shared/book';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/shared/user/user.service';
+import { PurchaseService } from 'src/app/purchase/shared/purchase.service';
 
 @Component({
   selector: 'app-book',
@@ -19,6 +20,7 @@ export class BookComponent implements OnInit {
     private authorService: AuthorService,
     private genreService: GenreService,
     private userService: UserService,
+    private purchaseService: PurchaseService,
     private router: Router,
     private route: ActivatedRoute
     ) { }
@@ -37,7 +39,17 @@ export class BookComponent implements OnInit {
     return this.userService.isEmployee();
   }
   addToCart(){
-    // toDo: add book to purchase, retrieve purchase from db
+    this.purchaseService.createPurchase().subscribe(
+      purch => {
+        // once the purchase is returned.
+        // we need to add a book to it.
+        this.purchaseService.addBook(purch, this.openBook)
+          .subscribe(updatedPurchase => {
+            //once this is done. we navigate to our purchase
+            this.router.navigate(['/purch',updatedPurchase.id]);
+          })
+      }
+    )
   }
   editBook(){
     this.router.navigate(['/books/edit',this.openBook.id]);

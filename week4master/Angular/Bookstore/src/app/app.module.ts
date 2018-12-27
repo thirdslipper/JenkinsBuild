@@ -22,6 +22,9 @@ import { UserService } from './shared/user/user.service';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './purchase/cart/cart.component';
 import { PurchaseComponent } from './purchase/purchase/purchase.component';
+import { PurchaseService } from './purchase/shared/purchase.service';
+
+
 
 @NgModule({
   declarations: [
@@ -50,7 +53,8 @@ import { PurchaseComponent } from './purchase/purchase/purchase.component';
     GenreService,
     BookService,
     UrlService,
-    UserService
+    UserService,
+    PurchaseService
   ],
   bootstrap: [AppComponent]
 })
