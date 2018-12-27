@@ -99,11 +99,20 @@ public class UserOracle implements UserDAO {
 			throw new RuntimeException("User u cannot be null");
 		}
 		try(Connection conn = cu.getConnection()){
-			String sql = "select id, first_name, last_name "
-					+ "from login where username=? and pswd = ?";
-			PreparedStatement pstm = conn.prepareStatement(sql);
-			pstm.setString(1, u.getUsername());
-			pstm.setString(2, u.getPassword());
+			String sql;
+			PreparedStatement pstm;
+			if(u.getUsername() != null && u.getPassword() != null) {
+				sql = "select id, first_name, last_name, username, pswd"
+					+ " from login where username=? and pswd = ?";
+				pstm = conn.prepareStatement(sql);
+				pstm.setString(1, u.getUsername());
+				pstm.setString(2, u.getPassword());
+			} else {
+				sql = "select id, first_name, last_name, username, pswd "
+						+ "from login where id = ?";
+				pstm = conn.prepareStatement(sql);
+				pstm.setInt(1, u.getId());
+			}
 			ResultSet rs = pstm.executeQuery();
 			//username is unique, this query can only ever return a single result, so if is ok.
 			if(rs.next())
@@ -111,6 +120,8 @@ public class UserOracle implements UserDAO {
 				log.trace("User found.");
 				u.setFirst(rs.getString("first_name"));
 				u.setLast(rs.getString("last_name"));
+				u.setPassword(rs.getString("pswd"));
+				u.setUsername(rs.getString("username"));
 				u.setId(rs.getInt("id"));
 			} else {
 				u.setId(0);

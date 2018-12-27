@@ -45,6 +45,7 @@ public class PurchaseServiceJDBC implements PurchaseService {
 		}
 		
 		//eagerly fetch customer information
+		log.trace("Retrieving customer: "+p.getCust().getId());
 		p.setCust(cs.getCustomerById(p.getCust().getId()));
 		return p;
 	}

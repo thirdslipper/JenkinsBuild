@@ -41,6 +41,7 @@ public class CustomerServiceJDBC implements CustomerService {
 			log.trace("No customer found");
 			return null;
 		}
+		cust = cd.getCustomer(cust);
 		cust.setAddress(addrdao.getAddress(cust.getAddress().getId()));
 		cust.setReadingList(bs.getBooksForReadingList(cust));
 		return cust;
