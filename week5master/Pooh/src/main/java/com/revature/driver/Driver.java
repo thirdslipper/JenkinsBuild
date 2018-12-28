@@ -4,10 +4,13 @@ package com.revature.driver;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 
 import com.revature.beans.Bear;
 import com.revature.beans.Cave;
 import com.revature.beans.HoneyPot;
+import com.revature.data.BearDao;
+import com.revature.data.BearHibernate;
 import com.revature.util.HibernateUtil;
 
 public class Driver {
@@ -24,9 +27,104 @@ public class Driver {
 		//log.trace(getHoneyPot(1));
 		//log.trace(secondRetrieval(1));
 		//buildABear();
-		log.trace(secondRetrieval(2));
+		//log.trace(secondRetrieval(2));
+		
+		// difference between get and load
+		/*HoneyPot h = getHoneyPot(3);
+		log.trace(h);
+		h = getHoneyPot(5);
+		log.trace(""+h);*/
+		/*HoneyPot h = loadHoneyPot(3);
+		//log.trace(h);
+		Session su = hu.getSession();
+		h = su.load(HoneyPot.class,h.getHoneypotId());
+		log.trace(h);
+		su.close();*/
+		
+		//fixingLazyInitialization();
+		
+		//updateVsMerge();
+		
+		//automaticDirtyChecking();
+		
+		//savingDetachedObjects();
+		
+		//nativeQuery();
+		
+		daos();
 		
 		hu.getSessionFactory().close();
+	}
+	private static void daos() {
+		BearDao bd = new BearHibernate();
+		log.trace(bd.getBearsHQL());
+	}
+	private static void nativeQuery() {
+		Session s = hu.getSession();
+		HoneyPot h;
+		String nativeSQL = "Select * from honey_pot where honeypot_id=:billybob";
+		NativeQuery<HoneyPot> n = s.createNativeQuery(nativeSQL, HoneyPot.class);
+		n.setParameter("billybob", 1);
+		h = n.uniqueResult();
+		log.trace(h);
+		s.close();
+	}
+	private static void savingDetachedObjects() {
+		Bear b = secondRetrieval(1);
+		Session s = hu.getSession();
+		Transaction tx = s.beginTransaction();
+		s.save(b);
+		tx.commit();
+		s.close();
+	}
+	public static void automaticDirtyChecking() {
+		Session s = hu.getSession();
+		Transaction tx = s.beginTransaction();
+		HoneyPot h = s.get(HoneyPot.class, 3);
+		log.trace(h);
+		h.setVolume(h.getVolume()+1);
+		//s.update(h);
+		log.trace(h);
+		h.setVolume(h.getVolume()+1);
+		log.trace(h);
+		tx.commit();
+		s.close();
+	}
+	public static void updateVsMerge() {
+		Bear b1 = secondRetrieval(1);
+		Bear b2 = secondRetrieval(1);
+		//log.trace(b1==b2);
+		b1.setBearColor("white");
+		Session s = hu.getSession();
+		Transaction tx = s.beginTransaction();
+		Bear b3 = (Bear) s.merge(b1);
+		b2.setBearColor("pink");
+		Bear b4 = (Bear) s.merge(b2);
+		log.trace("b1 compare to b2: "+(b1==b2));
+		log.trace("b1 compare to b3: "+(b1==b3));
+		log.trace("b1 compare to b4: "+(b1==b4));
+		log.trace("b2 compare to b3: "+(b2==b3));
+		log.trace("b2 compare to b4: "+(b2==b4));
+		log.trace("b3 compare to b4: "+(b3==b4));
+		
+		s.update(b2);
+		tx.commit();
+		s.close();
+	}
+	private static void fixingLazyInitialization() {
+		Bear b = secondRetrieval(2);
+		Session su = hu.getSession();
+		su.update(b);
+		log.trace(b.getCave().getResidents());
+		su.close();	
+		
+	}
+	private static HoneyPot loadHoneyPot(int id) {
+		Session su = hu.getSession();
+		HoneyPot h = su.load(HoneyPot.class, id);
+		//h.getVolume();
+		su.close();
+		return h;
 	}
 	public static void buildABear() {
 		Bear b = new Bear();

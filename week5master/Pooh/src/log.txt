@@ -874,3 +874,367 @@
 2018-12-27 16:32:39 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
 2018-12-27 16:32:40 TRACE Driver:27 - Bear [bearId=2, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=3, volume=7.0, honeyAmount=6.0], bearCubs=[Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0]], bearColor=White, breed=Polar, weight=600.0, height=5.0]
 2018-12-27 16:32:40 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:14:27 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:14:27 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:14:27 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:14:27 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:14:27 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:14:27 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:14:27 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:14:27 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:14:27 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:14:29 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:14:29 TRACE Driver:31 - HoneyPot [honeypotId=3, volume=7.0, honeyAmount=6.0]
+2018-12-28 09:14:29 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:15:47 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:15:47 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:15:47 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:15:47 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:15:48 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:15:48 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:15:48 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:15:48 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:15:48 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:15:48 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:15:49 TRACE Driver:31 - HoneyPot [honeypotId=3, volume=7.0, honeyAmount=6.0]
+2018-12-28 09:15:49 TRACE Driver:33 - null
+2018-12-28 09:15:49 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:16:00 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:16:00 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:16:00 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:16:01 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:16:01 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:16:01 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:16:01 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:16:01 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:16:01 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:16:01 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:16:02 TRACE Driver:31 - HoneyPot [honeypotId=3, volume=7.0, honeyAmount=6.0]
+2018-12-28 09:16:02 TRACE Driver:33 - 
+2018-12-28 09:16:02 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:17:50 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:17:51 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:17:51 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:17:51 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:17:51 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:17:51 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:17:51 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:17:51 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:17:51 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:17:51 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:17:52 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:18:24 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:18:25 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:18:25 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:18:25 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:18:25 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:18:25 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:18:25 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:18:25 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:18:25 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:18:25 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:18:26 TRACE Driver:35 - org.hibernate.LazyInitializationException: could not initialize proxy - no Session
+2018-12-28 09:18:26 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:19:07 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:19:07 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:19:07 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:19:07 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:19:07 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:19:07 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:19:07 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:19:07 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:19:07 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:19:08 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:19:09 TRACE Driver:35 - org.hibernate.LazyInitializationException: could not initialize proxy - no Session
+2018-12-28 09:19:09 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:19:46 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:19:47 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:19:47 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:19:47 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:19:47 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:19:47 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:19:47 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:19:47 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:19:47 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:19:47 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:19:48 TRACE Driver:35 - HoneyPot [honeypotId=3, volume=7.0, honeyAmount=6.0]
+2018-12-28 09:19:48 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:20:31 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:20:31 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:20:31 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:20:32 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:20:32 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:20:32 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:20:32 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:20:32 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:20:32 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:20:32 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:20:33 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:20:47 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:20:48 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:20:48 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:20:48 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:20:48 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:20:48 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:20:48 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:20:48 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:20:48 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:20:48 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:24:25 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:24:25 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:24:25 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:24:25 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:24:25 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:24:26 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:24:26 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:24:26 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:24:26 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:24:26 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:24:27 TRACE Driver:37 - org.hibernate.LazyInitializationException: could not initialize proxy - no Session
+2018-12-28 09:24:27 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:27:04 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:27:04 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:27:04 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:27:05 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:27:05 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:27:05 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:27:05 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:27:05 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:27:05 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:27:05 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:27:06 TRACE Driver:38 - org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [com.revature.beans.HoneyPot#8]
+2018-12-28 09:27:06 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:27:15 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:27:15 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:27:15 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:27:15 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:27:15 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:27:15 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:27:15 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:27:15 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:27:15 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:27:16 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:27:16 TRACE Driver:38 - HoneyPot [honeypotId=3, volume=7.0, honeyAmount=6.0]
+2018-12-28 09:27:16 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:28:29 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:28:29 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:28:29 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:28:29 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:28:29 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:28:29 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:28:29 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:28:29 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:28:29 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:28:29 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:28:30 TRACE Driver:47 - org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: com.revature.beans.Cave.residents, could not initialize proxy - no Session
+2018-12-28 09:28:30 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:29:10 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:29:10 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:29:10 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:29:10 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:29:10 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:29:11 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:29:11 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:29:11 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:29:11 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:29:11 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:29:12 TRACE Driver:49 - [Bear [bearId=2, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=3, volume=7.0, honeyAmount=6.0], bearCubs=[Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0]], bearColor=White, breed=Polar, weight=600.0, height=5.0], Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0]]
+2018-12-28 09:29:12 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:54:01 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:54:01 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:54:01 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:54:01 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:54:02 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:54:02 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:54:02 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:54:02 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:54:02 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:54:02 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:54:03 TRACE Driver:50 - false
+2018-12-28 09:54:03 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:57:14 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:57:14 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:57:14 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:57:15 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:57:15 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:57:15 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:57:15 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:57:15 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:57:15 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:57:15 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:57:16 TRACE Driver:56 - b1 compare to b2: false
+2018-12-28 09:57:16 TRACE Driver:57 - b1 compare to b3: false
+2018-12-28 09:57:16 TRACE Driver:58 - b2 compare to b3: false
+2018-12-28 09:57:16 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:58:48 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:58:48 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:58:48 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:58:48 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:58:48 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:58:48 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:58:48 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:58:48 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:58:48 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:58:49 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:58:49 TRACE Driver:56 - b1 compare to b2: false
+2018-12-28 09:58:49 TRACE Driver:57 - b1 compare to b3: false
+2018-12-28 09:58:49 TRACE Driver:58 - b1 compare to b4: false
+2018-12-28 09:58:49 TRACE Driver:59 - b2 compare to b3: false
+2018-12-28 09:58:49 TRACE Driver:60 - b2 compare to b4: false
+2018-12-28 09:58:49 TRACE Driver:61 - b3 compare to b4: false
+2018-12-28 09:58:49 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:59:08 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:59:08 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:59:08 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:59:08 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:59:08 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:59:08 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:59:08 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:59:08 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:59:08 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:59:09 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:59:09 TRACE Driver:56 - b1 compare to b2: false
+2018-12-28 09:59:09 TRACE Driver:57 - b1 compare to b3: false
+2018-12-28 09:59:09 TRACE Driver:58 - b1 compare to b4: false
+2018-12-28 09:59:09 TRACE Driver:59 - b2 compare to b3: false
+2018-12-28 09:59:09 TRACE Driver:60 - b2 compare to b4: false
+2018-12-28 09:59:09 TRACE Driver:61 - b3 compare to b4: true
+2018-12-28 09:59:09 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:59:50 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 09:59:50 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 09:59:50 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 09:59:51 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 09:59:51 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 09:59:51 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 09:59:51 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 09:59:51 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 09:59:51 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 09:59:51 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 09:59:52 TRACE Driver:57 - b1 compare to b2: false
+2018-12-28 09:59:52 TRACE Driver:58 - b1 compare to b3: false
+2018-12-28 09:59:52 TRACE Driver:59 - b1 compare to b4: false
+2018-12-28 09:59:52 TRACE Driver:60 - b2 compare to b3: false
+2018-12-28 09:59:52 TRACE Driver:61 - b2 compare to b4: false
+2018-12-28 09:59:52 TRACE Driver:62 - b3 compare to b4: true
+2018-12-28 09:59:52 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:02:30 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 10:02:30 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 10:02:30 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 10:02:30 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 10:02:30 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 10:02:31 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:02:31 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 10:02:31 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 10:02:31 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 10:02:31 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 10:02:32 TRACE Driver:57 - b1 compare to b2: false
+2018-12-28 10:02:32 TRACE Driver:58 - b1 compare to b3: false
+2018-12-28 10:02:32 TRACE Driver:59 - b1 compare to b4: false
+2018-12-28 10:02:32 TRACE Driver:60 - b2 compare to b3: false
+2018-12-28 10:02:32 TRACE Driver:61 - b2 compare to b4: false
+2018-12-28 10:02:32 TRACE Driver:62 - b3 compare to b4: true
+2018-12-28 10:07:16 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 10:07:16 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 10:07:16 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 10:07:16 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 10:07:16 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 10:07:16 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:07:16 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 10:07:16 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 10:07:16 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 10:07:17 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 10:07:17 TRACE Driver:53 - HoneyPot [honeypotId=3, volume=7.0, honeyAmount=6.0]
+2018-12-28 10:07:17 TRACE Driver:56 - HoneyPot [honeypotId=3, volume=8.0, honeyAmount=6.0]
+2018-12-28 10:07:17 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:08:56 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 10:08:56 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 10:08:56 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 10:08:57 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 10:08:57 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 10:08:57 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:08:57 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 10:08:57 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 10:08:57 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 10:08:57 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 10:08:58 TRACE Driver:53 - HoneyPot [honeypotId=3, volume=8.0, honeyAmount=6.0]
+2018-12-28 10:08:58 TRACE Driver:56 - HoneyPot [honeypotId=3, volume=9.0, honeyAmount=6.0]
+2018-12-28 10:08:58 TRACE Driver:58 - HoneyPot [honeypotId=3, volume=10.0, honeyAmount=6.0]
+2018-12-28 10:08:58 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:09:48 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 10:09:48 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 10:09:48 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 10:09:48 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 10:09:49 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 10:09:49 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:09:49 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 10:09:49 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 10:09:49 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 10:09:49 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 10:09:50 TRACE Driver:53 - HoneyPot [honeypotId=3, volume=10.0, honeyAmount=6.0]
+2018-12-28 10:09:50 TRACE Driver:56 - HoneyPot [honeypotId=3, volume=11.0, honeyAmount=6.0]
+2018-12-28 10:09:50 TRACE Driver:58 - HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0]
+2018-12-28 10:09:50 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:11:32 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 10:11:32 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 10:11:32 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 10:11:32 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 10:11:32 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 10:11:32 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:11:32 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 10:11:32 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 10:11:32 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 10:11:32 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 10:11:33 TRACE Driver:53 - HoneyPot [honeypotId=3, volume=10.0, honeyAmount=6.0]
+2018-12-28 10:11:33 TRACE Driver:56 - HoneyPot [honeypotId=3, volume=11.0, honeyAmount=6.0]
+2018-12-28 10:11:33 TRACE Driver:58 - HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0]
+2018-12-28 10:11:33 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:13:29 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 10:13:29 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 10:13:29 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 10:13:29 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 10:13:29 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 10:13:29 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:13:29 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 10:13:29 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 10:13:29 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 10:13:29 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 10:13:30 TRACE Driver:53 - HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0]
+2018-12-28 10:13:30 TRACE Driver:56 - HoneyPot [honeypotId=3, volume=13.0, honeyAmount=6.0]
+2018-12-28 10:13:30 TRACE Driver:58 - HoneyPot [honeypotId=3, volume=14.0, honeyAmount=6.0]
+2018-12-28 10:13:30 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:36:21 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 10:36:21 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 10:36:21 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 10:36:21 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 10:36:21 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 10:36:22 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:36:22 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 10:36:22 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 10:36:22 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 10:36:22 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 10:36:23 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:40:09 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 10:40:09 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 10:40:09 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 10:40:09 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 10:40:09 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 10:40:09 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:40:09 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 10:40:09 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 10:40:09 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 10:40:09 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 10:40:10 TRACE Driver:61 - HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0]
+2018-12-28 10:40:10 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:56:25 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 10:56:25 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 10:56:25 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 10:56:25 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 10:56:25 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 10:56:25 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 10:56:25 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 10:56:25 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 10:56:25 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 10:56:25 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 10:56:26 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-12-28 10:56:26 TRACE Driver:60 - [Bear [bearId=2, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0], bearCubs=[Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0]], bearColor=White, breed=Polar, weight=600.0, height=5.0], Bear [bearId=4, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0], Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0], Bear [bearId=1, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0]]
+2018-12-28 10:56:26 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
