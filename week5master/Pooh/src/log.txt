@@ -1238,3 +1238,73 @@
 2018-12-28 10:56:26 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
 2018-12-28 10:56:26 TRACE Driver:60 - [Bear [bearId=2, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0], bearCubs=[Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0]], bearColor=White, breed=Polar, weight=600.0, height=5.0], Bear [bearId=4, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0], Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0], Bear [bearId=1, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0]]
 2018-12-28 10:56:26 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 13:13:02 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 13:13:03 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 13:13:03 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 13:13:03 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 13:13:03 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 13:13:03 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 13:13:03 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 13:13:03 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 13:13:03 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 13:13:05 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 13:13:06 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-12-28 13:13:06 TRACE Driver:74 - [Bear [bearId=2, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0], bearCubs=[Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0]], bearColor=White, breed=Polar, weight=600.0, height=5.0], Bear [bearId=4, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0], Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0], Bear [bearId=1, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0]]
+2018-12-28 13:13:33 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 13:13:33 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 13:13:33 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 13:13:34 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 13:13:34 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 13:13:34 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 13:13:34 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 13:13:34 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 13:13:34 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 13:13:34 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 13:13:35 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-12-28 13:13:35 TRACE Driver:74 - [Bear [bearId=2, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0], bearCubs=[Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0]], bearColor=White, breed=Polar, weight=600.0, height=5.0], Bear [bearId=4, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0], Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0], Bear [bearId=1, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0]]
+2018-12-28 13:13:36 TRACE Driver:70 - [Bear [bearId=1, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0], Bear [bearId=4, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0]]
+2018-12-28 13:13:36 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 13:19:42 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 13:19:42 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 13:19:42 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 13:19:42 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 13:19:42 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 13:19:42 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 13:19:42 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 13:19:42 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 13:19:42 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 13:19:43 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 13:19:44 ERROR MetadataContext:462 - HHH015007: Illegal argument on static metamodel field injection : com.revature.beans.Bear_#cave; expected type :  org.hibernate.metamodel.internal.SingularAttributeImpl; encountered type : javax.persistence.metamodel.SetAttribute
+2018-12-28 13:19:44 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-12-28 13:19:44 TRACE Driver:74 - [Bear [bearId=2, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0], bearCubs=[Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0]], bearColor=White, breed=Polar, weight=600.0, height=5.0], Bear [bearId=4, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0], Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0], Bear [bearId=1, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0]]
+2018-12-28 13:19:44 TRACE Driver:75 - [Bear [bearId=2, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0], bearCubs=[Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0]], bearColor=White, breed=Polar, weight=600.0, height=5.0], Bear [bearId=4, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0], Bear [bearId=3, cave=Cave [caveId=2, squareFootage=10.0, caveType=Igloo], honeyPot=HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0], bearCubs=[], bearColor=White, breed=Polar, weight=300.0, height=3.0], Bear [bearId=1, cave=Cave [caveId=1, squareFootage=4.0, caveType=Dark], honeyPot=HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], bearCubs=[], bearColor=pink, breed=kodiak, weight=50.0, height=1.0]]
+2018-12-28 13:19:44 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 13:22:58 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 13:22:59 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 13:22:59 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 13:22:59 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 13:22:59 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 13:22:59 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 13:22:59 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 13:22:59 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 13:22:59 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 13:22:59 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 13:23:00 ERROR MetadataContext:462 - HHH015007: Illegal argument on static metamodel field injection : com.revature.beans.Bear_#cave; expected type :  org.hibernate.metamodel.internal.SingularAttributeImpl; encountered type : javax.persistence.metamodel.SetAttribute
+2018-12-28 13:23:00 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-12-28 13:23:00 TRACE Driver:68 - [HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], HoneyPot [honeypotId=2, volume=655.0, honeyAmount=75.0], HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0], HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0]]
+2018-12-28 13:23:00 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 13:24:31 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2018-12-28 13:24:31 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2018-12-28 13:24:31 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2018-12-28 13:24:32 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-28 13:24:32 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2018-12-28 13:24:32 INFO  pooling:126 - HHH10001005: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+2018-12-28 13:24:32 INFO  pooling:135 - HHH10001001: Connection properties: {user=bear, password=****}
+2018-12-28 13:24:32 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2018-12-28 13:24:32 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-12-28 13:24:32 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-12-28 13:24:33 ERROR MetadataContext:462 - HHH015007: Illegal argument on static metamodel field injection : com.revature.beans.Bear_#cave; expected type :  org.hibernate.metamodel.internal.SingularAttributeImpl; encountered type : javax.persistence.metamodel.SetAttribute
+2018-12-28 13:24:33 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-12-28 13:24:33 TRACE Driver:68 - [HoneyPot [honeypotId=1, volume=706.0, honeyAmount=607.0], HoneyPot [honeypotId=2, volume=655.0, honeyAmount=75.0], HoneyPot [honeypotId=3, volume=12.0, honeyAmount=6.0], HoneyPot [honeypotId=4, volume=3.0, honeyAmount=3.0]]
+2018-12-28 13:24:33 TRACE Driver:72 - [HoneyPot [honeypotId=2, volume=655.0, honeyAmount=75.0]]
+2018-12-28 13:24:33 INFO  pooling:230 - HHH10001008: Cleaning up connection pool [jdbc:oracle:thin:@localhost:1521:xe]

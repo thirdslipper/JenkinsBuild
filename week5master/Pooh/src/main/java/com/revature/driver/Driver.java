@@ -1,10 +1,13 @@
 package com.revature.driver;
 
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
 
 import com.revature.beans.Bear;
 import com.revature.beans.Cave;
@@ -51,13 +54,36 @@ public class Driver {
 		
 		//nativeQuery();
 		
-		daos();
+		//daos();
+		
+		// hql();
+		
+		namedQueries();
 		
 		hu.getSessionFactory().close();
+	}
+	private static void namedQueries() {
+		Session s = hu.getSession();
+		List<HoneyPot> h = s.createNamedQuery("getAllHoneypots", HoneyPot.class).getResultList();
+		log.trace(h);
+		
+		h = s.createNamedQuery("getAllHoneypotsWithHoney", HoneyPot.class)
+				.setParameter("amount", 75.0).getResultList();
+		log.trace(h);
+	}
+	private static void hql() {
+		Session s = hu.getSession();
+		String query = "from com.revature.beans.Bear where bearColor = :color";
+		Query<Bear> q = s.createQuery(query, Bear.class);
+		q.setParameter("color", "pink");
+		List<Bear> bearList = q.getResultList();
+		s.close();
+		log.trace(bearList);
 	}
 	private static void daos() {
 		BearDao bd = new BearHibernate();
 		log.trace(bd.getBearsHQL());
+		log.trace(bd.getBearsCriteria());
 	}
 	private static void nativeQuery() {
 		Session s = hu.getSession();
