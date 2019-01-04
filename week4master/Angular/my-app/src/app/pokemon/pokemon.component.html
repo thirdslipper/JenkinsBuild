@@ -1,0 +1,9 @@
+<div>
+    <h2>{{pokemon.id+': '}}{{pokemon.name | titlecase}}</h2>
+    <label>Height: </label>{{pokemon.height}}
+    <br>
+    <label>Weight: </label>{{pokemon.weight}}
+    <br>
+    <app-stats [stats]="pokemon.stats"></app-stats>
+    <app-sprites [sprites]="pokemon.sprites"></app-sprites>
+</div>

@@ -1,0 +1,6 @@
+<app-author *ngFor="let a of authors" [openAuthor]="a"></app-author>
+
+<div *ngIf="isEmployee()">
+  <p> Add an author: </p>
+  <app-author [openAuthor]="author" (submitted)="newAuthor($event)"></app-author>
+</div>

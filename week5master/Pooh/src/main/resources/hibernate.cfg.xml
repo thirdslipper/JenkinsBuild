@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="hibernate.connection.username">bear</property>
+		<property name="hibernate.connection.password">p4ssw0rd</property>
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		
+		<!-- Hibernate specific properties (optional) -->
+		<property name="show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="use_sql_comments">true</property>
+		
+		<!-- Tell hibernate how to map objects to tables -->
+		<!-- XML mappings -->
+		<!-- <mapping resource="HoneyPot.hbm.xml"/> -->
+		
+		<!-- JPA Annotations -->
+		<mapping class="com.revature.beans.HoneyPot"></mapping>
+		<mapping class="com.revature.beans.Bear"></mapping>
+		<mapping class="com.revature.beans.Cave"></mapping>
+	</session-factory>
+</hibernate-configuration>

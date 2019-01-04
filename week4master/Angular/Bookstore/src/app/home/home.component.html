@@ -1,0 +1,36 @@
+<!-- <div class="container">
+    <div class="row" *ngIf="isEmployee()">
+      <div class="card-body col">
+        <h4 class="card-title">Total Sales</h4>
+        <p class="card-text">{{totalSales()}}</p>
+      </div>
+      <div class="card-body col">
+        <h4 class="card-title"># Sales</h4>
+        <p class="card-text">{{numSales()}}</p>
+      </div>
+    </div>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Stock</th>
+      </tr>
+      <tr *ngFor="let b of books">
+        <td><a (click)="goToBook(b)">{{b.title}}</a></td>
+        <td>{{b.stock}}</td>
+      </tr>
+    </table>
+    <fusioncharts *ngIf="books"
+    [width]="width"
+    [height]="height"
+    [type]="type"
+    [dataFormat]="dataFormat"
+    [dataSource]="getBookDataSource()">
+  </fusioncharts>
+  <fusioncharts *ngIf="isEmployee()"
+  [width]="width"
+  [height]="height"
+  [type]="type"
+  [dataFormat]="dataFormat"
+  [dataSource]="getPurchaseDataSource()">
+  </fusioncharts>
+  </div> -->

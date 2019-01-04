@@ -1,0 +1,4 @@
+<div class="container">
+  Search: <input class="well" [(ngModel)]="searchBar" type="text">
+</div>
+<app-book *ngFor="let b of books | bookFilter: searchBar" [openBook]="b"></app-book>

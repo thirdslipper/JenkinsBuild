@@ -1,0 +1,13 @@
+<div><table *ngIf="stats.length > 0">
+  <tr class="header" appHighlight>
+    <th>Name</th>
+    <th>Effort Value</th>
+    <th>Value</th>
+  </tr>
+  <tr *ngFor="let s of stats" appHighlight>
+    <td >{{s.stat.name | titlecase}}</td>
+    <td>{{s.effort}}</td>
+    <td>{{s.base_stat}}</td>
+  </tr>
+</table>
+</div>

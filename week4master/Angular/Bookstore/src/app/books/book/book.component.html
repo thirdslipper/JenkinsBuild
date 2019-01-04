@@ -1,0 +1,55 @@
+<div class="container border" *ngIf="openBook">
+    <div class="row">
+        <div class="col-sm border card">
+          <h4 class="border border-dark mx-auto">{{openBook.title}}</h4>
+          <div class="row">
+            <img *ngIf="openBook.cover" class="card-img-top img-responsive col" [src]="openBook.cover" alt="cover image for book">
+            <div class="col">
+              <span class="mx-auto font-weight-bold">by</span>
+              <app-author class="card-text mx-auto" *ngFor="let a of openBook.authors" [openAuthor]="a"></app-author>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="row">
+            <div class="col">
+              <h5>ISBN:</h5>
+            </div>
+            <div class="col">
+              <p>{{openBook.isbn10}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h5>ISBN13:</h5>
+            </div>
+            <div class="col">
+              <p>{{openBook.isbn13}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h5>Price:</h5>
+            </div>
+            <div class="col">
+              <p>{{openBook.price}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h5>Stock:</h5>
+            </div>
+            <div class="col">
+              <p>{{openBook.stock}}</p>
+            </div>
+          </div>
+          <br>
+          <h5>Genres:</h5>
+          <ul>
+            <li *ngFor="let g of openBook.genres">{{g.genre}}</li>
+          </ul>
+          <button *ngIf="isCustomer()" class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
+          <button *ngIf="isEmployee()" class="btn btn-danger" (click)="editBook()">Edit Book</button>
+        </div>
+      </div>
+</div>
