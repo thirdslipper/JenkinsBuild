@@ -1,5 +1,5 @@
 package com.revature.beans;
-//
+
 public class Address {
 	private Integer id;
 	private String lineOne;
